@@ -161,9 +161,10 @@ footer {
     margin: 20px auto;
     text-align: center;
     border: 2px solid orange; /* Adds a border to the box */
-    margin-left: 5px;
-    margin-right: 5px;
-    align-content: center;
+    left: 0;
+    right: 0;
+    position: relative;
+    display: block;
 }
 
 .info-box h2 {

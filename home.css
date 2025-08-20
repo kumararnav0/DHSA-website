@@ -244,7 +244,7 @@ footer {
     .navbar {
         gap: 5px;
         width: 100%;
-        padding: 0 5px;
+        
         justify-content: center;
     }
     .navbar a {

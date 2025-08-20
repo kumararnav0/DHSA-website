@@ -249,10 +249,7 @@ footer {
     }
     .navbar a {
         font-size: 0.675rem;
-        
-        min-width: unset;
         text-align: center;
-        border-bottom: none;
         
     }
 }

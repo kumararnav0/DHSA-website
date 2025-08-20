@@ -245,13 +245,15 @@ footer {
         gap: 5px;
         width: 100%;
         padding: 0 5px;
+        justify-content: center;
     }
     .navbar a {
         font-size: 0.675rem;
-        padding: 8px 10px;
+        
         min-width: unset;
         text-align: center;
         border-bottom: none;
+        
     }
 }
 

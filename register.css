@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Tan+Headline&family=Rozha+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spicy+Rice&family=Audiowide&family=Playfair+Display:wght@400;700&family=Pirata+One&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
 
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
 body {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
@@ -7,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: transparent; /* Ensure body background is transparent */
+    background-color: transparent;
 }
 
 body::before {
@@ -17,7 +20,7 @@ body::before {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    position: fixed; /* Fix the background to the viewport */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -37,15 +40,15 @@ body::before {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 5px; /* Reduced gap between logo and name */
+    gap: 5px;
 }
 
 .logo {
     height: 100px;
     width: 100px;
-    border-radius: 50%; /* Makes the logo circular */
-    border: 3px solid white; /* Adds a border */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow */
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .association-name {
@@ -60,7 +63,7 @@ body::before {
 .navbar {
     display: flex;
     gap: 20px;
-    font-size: 1rem; /* 16px */
+    font-size: 1rem;
     color: white;
 }
 
@@ -68,103 +71,23 @@ body::before {
     text-decoration: none;
     color: white;
     white-space: nowrap;
-    transition: color 0.3s ease; /* Smooth hover effect */
+    transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: orange; /* Changes color on hover */
+    color: orange;
 }
-
-
-
-
-
-footer {
-    background: linear-gradient(to right, orange 0%, transparent 130%);
-    text-align: center;
-    padding: 10px 0;
-    font-size: 1rem; /* 16px */
-    margin-top: auto; /* Pushes the footer to the bottom */
-}
-
-/* Responsive Design for Phone */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .logo {
-        height: 80px;
-        width: 80px;
-    }
-
-    .association-name {
-        font-size: 1.5rem; /* Decreased by 5% (from 2.16rem to 2.052rem) */
-    }
-
-    .navbar {
-        font-size: 0.675rem; /* 14px */
-        gap: 10px;
-    }
-
-    
-
-    
-
-
-    footer {
-        font-size: 0.875rem; /* 14px */
-    }
-}
-
-@media (max-width: 480px) {
-    .association-name {
-        font-size: 1.5rem; /* Decreased by 5% (from 1.8rem to 1.71rem) */
-    }
-
-    
-}
-@media (max-width: 768px) {
-    .info-box {
-        padding: 15px;
-        margin: 15px;
-    }
-
-    .info-box h2 {
-        font-size: 1.5rem;
-    }
-
-    .info-box p {
-        font-size: 0.875rem;
-    }
-
-    .register-button {
-        font-size: 0.875rem;
-        padding: 8px 16px;
-        max-width: fit-content;
-        align-self: center;
-    }
-}
-
-
-
-
 
 .info-box {
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid orange; /* Adds a border to the box */
-    left: 0;
-    right: 0;
-    position: relative;
-    display: block;
+    border: 2px solid orange;
+    /* REMOVED: Unnecessary position, left, right, and display properties */
 }
 
 .info-box h2 {
@@ -196,4 +119,67 @@ footer {
 
 .register-button:hover {
     background-color: darkorange;
+}
+
+footer {
+    background: linear-gradient(to right, orange 0%, transparent 130%);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1rem;
+    margin-top: auto;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+/* For Tablets and smaller devices */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo {
+        height: 80px;
+        width: 80px;
+    }
+
+    .association-name {
+        font-size: 1.5rem;
+    }
+
+    .navbar {
+        font-size: 0.675rem;
+        gap: 10px;
+    }
+
+    /* MERGED: .info-box rules are now in the correct, single block */
+    .info-box {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    .info-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .info-box p {
+        font-size: 0.875rem;
+    }
+
+    .register-button {
+        font-size: 0.875rem;
+        padding: 8px 16px;
+    }
+
+    footer {
+        font-size: 0.875rem;
+    }
+}
+
+/* For smaller mobile phones */
+@media (max-width: 480px) {
+    /* REMOVED: Redundant .association-name rule */
 }

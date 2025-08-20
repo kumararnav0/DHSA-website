@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Tan+Headline&family=Rozha+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spicy+Rice&family=Audiowide&family=Playfair+Display:wght@400;700&family=Pirata+One&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
 
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
 body {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
@@ -49,16 +52,17 @@ body::before {
 }
 
 .association-name {
+    font-size: 2.394rem;
     font-family: "Pirata One", system-ui;
     color: white;
     font-weight: 400;
-    font-size: 2.394rem;
     white-space: nowrap;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .navbar {
     display: flex;
-    gap: 12px;
+    gap: 20px;
     font-size: 1rem;
     color: white;
 }
@@ -74,90 +78,46 @@ body::before {
     color: orange;
 }
 
-.hinditext {
-    filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+.info-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 20px auto;
     text-align: center;
-    font-size: 4rem;
-    margin-top: 50px;
-    color: whitesmoke;
-    font-family: "Rozha One", serif;
+    border: 2px solid orange;
 }
 
-.engtext {
-    filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
-    text-align: center;
+.info-box h2 {
+    font-family: "Pirata One", system-ui;
     font-size: 2rem;
-    margin-top: 10px;
-    color: whitesmoke;
+    color: orange;
+    margin-bottom: 10px;
+}
+
+.info-box p {
     font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-.about-dhsa {
-    border-radius: 15px;
-    background: rgba(255, 165, 0, 0.5);
-    padding: 20px;
-    text-align: justify;
-    margin: 20px auto;
-    width: fit-content;
-    max-width: 90%;
+.register-button {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     display: block;
-    color: black;
+    margin: 10px auto;
 }
 
-.about-dhsa h2 {
-    font-size: 2rem;
-    font-family: "Pirata One", system-ui;
-    color: white;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.about-dhsa p {
-    font-size: 1rem;
-    margin-top: 0;
-    line-height: 1.6;
-    font-weight: 500;
-}
-
-.boxes-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 20px auto;
-    max-width: 1200px;
-    padding: 0 20px;
-}
-
-.box {
-    border-radius: 15px;
-    background: rgba(255, 165, 0, 0.5);
-    padding: 20px;
-    text-align: justify;
-    font-size: 1rem;
-    width: calc(50% - 20px);
-    margin: 10px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-}
-
-.box h2 {
-    font-size: 1.5rem;
-    font-family: "Pirata One", system-ui;
-    color: white;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.box p {
-    font-size: 1rem;
-    margin-top: 0;
-    line-height: 1.6;
-    font-weight: 500;
+.register-button:hover {
+    background-color: darkorange;
 }
 
 footer {
@@ -177,7 +137,7 @@ footer {
     .header-container {
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 10px;
     }
 
     .logo {
@@ -190,85 +150,29 @@ footer {
     }
 
     .navbar {
-        align-items: center;
-        gap: 8px;
         font-size: 0.675rem;
+        gap: 10px;
     }
 
-    .hinditext {
-        font-size: 2.5rem;
-        margin-top: 10px;
-    }
-
-    .engtext {
-        font-size: 1.5rem;
-        margin-top: 5px;
-    }
-
-    .about-dhsa {
+    .info-box {
         padding: 15px;
+        margin: 15px;
     }
 
-    .about-dhsa h2 {
-        font-size: 1.75rem;
-    }
-
-    .about-dhsa p {
-        font-size: 0.875rem;
-    }
-
-    .boxes-container {
-        flex-direction: column;
-    }
-
-    .box {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .box h2 {
+    .info-box h2 {
         font-size: 1.5rem;
     }
 
-    .box p {
+    .info-box p {
         font-size: 0.875rem;
+    }
+
+    .register-button {
+        font-size: 0.875rem;
+        padding: 8px 16px;
     }
 
     footer {
         font-size: 0.875rem;
-    }
-}
-
-/* For larger mobile phones */
-@media (max-width: 600px) {
-    .navbar {
-        gap: 5px;
-        width: 100%;
-        
-        justify-content: center;
-    }
-    .navbar a {
-        font-size: 0.675rem;
-        text-align: center;
-        
-    }
-}
-
-/* For smaller mobile phones */
-@media (max-width: 480px) {
-    .hinditext {
-        font-size: 2rem;
-    }
-
-    .engtext {
-        font-size: 1.2rem;
-    }
-
-    .box h2 {
-        font-size: 1.25rem;
-    }
-
-    .box p {
-        font-size: 0.75rem;
     }
 }

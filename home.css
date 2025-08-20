@@ -1,3 +1,26 @@
+@media (max-width: 600px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100vw;
+        padding: 0 5px;
+        scrollbar-width: none; /* Firefox */
+    }
+    .navbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+    }
+    .navbar a {
+        font-size: 1.1rem;
+        padding: 8px 10px;
+        min-width: max-content;
+        text-align: center;
+        border-bottom: none;
+    }
+}
 @import url('https://fonts.googleapis.com/css2?family=Tan+Headline&family=Rozha+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spicy+Rice&family=Audiowide&family=Playfair+Display:wght@400;700&family=Pirata+One&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
 
 body {

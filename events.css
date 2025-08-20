@@ -49,12 +49,12 @@ body::before {
 }
 
 .association-name {
-    font-size: 2.394rem; /* Decreased by 5% (from 2.52rem to 2.394rem) */
+    font-size: 2.394rem;
     font-family: "Pirata One", system-ui;
     color: white;
     font-weight: 400;
     white-space: nowrap;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow to the text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .navbar {
@@ -188,11 +188,11 @@ footer {
     }
 
     .association-name {
-        font-size: 2.052rem; /* Decreased by 5% (from 2.16rem to 2.052rem) */
+        font-size: 1.5rem; /* Decreased by 5% (from 2.16rem to 2.052rem) */
     }
 
     .navbar {
-        font-size: 0.875rem; /* 14px */
+        font-size: 0.675rem; /* 14px */
         gap: 10px;
     }
 

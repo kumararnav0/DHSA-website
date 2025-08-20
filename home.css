@@ -1,26 +1,3 @@
-@media (max-width: 600px) {
-    .navbar {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-        overflow-x: auto;
-        white-space: nowrap;
-        width: 100vw;
-        padding: 0 5px;
-        scrollbar-width: none; /* Firefox */
-    }
-    .navbar::-webkit-scrollbar {
-        display: none; /* Chrome, Safari */
-    }
-    .navbar a {
-        font-size: 1.1rem;
-        padding: 8px 10px;
-        min-width: max-content;
-        text-align: center;
-        border-bottom: none;
-    }
-}
 @import url('https://fonts.googleapis.com/css2?family=Tan+Headline&family=Rozha+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spicy+Rice&family=Audiowide&family=Playfair+Display:wght@400;700&family=Pirata+One&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
 
 body {
@@ -30,7 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: transparent; /* Ensure body background is transparent */
+    background-color: transparent;
 }
 
 body::before {
@@ -40,7 +17,7 @@ body::before {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    position: fixed; /* Fix the background to the viewport */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -60,30 +37,29 @@ body::before {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 5px; /* Reduced gap between logo and name */
+    gap: 5px;
 }
 
 .logo {
     height: 100px;
     width: 100px;
-    border-radius: 50%; /* Makes the logo circular */
-    border: 3px solid white; /* Adds a border */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow */
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .association-name {
-    font-size: 2.394rem; /* Decreased by 5% (from 2.52rem to 2.394rem) */
     font-family: "Pirata One", system-ui;
     color: white;
     font-weight: 400;
+    font-size: 2.394rem;
     white-space: nowrap;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow to the text */
 }
 
 .navbar {
     display: flex;
-    gap: 20px;
-    font-size: 1rem; /* 16px */
+    gap: 12px;
+    font-size: 1rem;
     color: white;
 }
 
@@ -91,17 +67,17 @@ body::before {
     text-decoration: none;
     color: white;
     white-space: nowrap;
-    transition: color 0.3s ease; /* Smooth hover effect */
+    transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: orange; /* Changes color on hover */
+    color: orange;
 }
 
 .hinditext {
     filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
     text-align: center;
-    font-size: 4rem; /* 64px */
+    font-size: 4rem;
     margin-top: 50px;
     color: whitesmoke;
     font-family: "Rozha One", serif;
@@ -110,7 +86,7 @@ body::before {
 .engtext {
     filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
     text-align: center;
-    font-size: 2rem; /* 32px */
+    font-size: 2rem;
     margin-top: 10px;
     color: whitesmoke;
     font-family: "Poppins", sans-serif;
@@ -120,43 +96,38 @@ body::before {
     border-radius: 15px;
     background: rgba(255, 165, 0, 0.5);
     padding: 20px;
-    text-align: justify; /* Justify the content */
+    text-align: justify;
     margin: 20px auto;
-    font-size: 5rem ; /* 16px */
-    width: fit-content; /* Resize box width to fit content */
-    max-width: 90%; /* Ensure it doesn't overflow on small screens */
-    display: inline-block; /* Allow box to resize based on content */
+    width: fit-content;
+    max-width: 90%;
+    display: block;
     color: black;
-    
-    
 }
 
 .about-dhsa h2 {
-    font-size: 2rem; /* 32px */
-    font-family: "Pirata One", system-ui; /* Same font as association name */
+    font-size: 2rem;
+    font-family: "Pirata One", system-ui;
     color: white;
-    text-align: center; /* Center the heading */
+    text-align: center;
     margin-top: 0;
-    margin-bottom: 10px; /* Reduced gap between heading and content */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow to the text */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .about-dhsa p {
-    font-size: 1rem; /* 16px */
-    margin-top: 0; /* Reduced gap between heading and content */
-    font-weight: 300; /* Not bold */
-    line-height: 1.6; /* Improve readability */
+    font-size: 1rem;
+    margin-top: 0;
+    line-height: 1.6;
     font-weight: 500;
 }
 
-/* New Section: 4 Boxes in a 2x2 Matrix */
 .boxes-container {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
+    justify-content: center;
+    flex-wrap: wrap;
     margin: 20px auto;
-    max-width: 1200px; /* Limit the width of the container */
-    padding: 0 20px; /* Add padding for smaller screens */
+    max-width: 1200px;
+    padding: 0 20px;
 }
 
 .box {
@@ -165,15 +136,15 @@ body::before {
     padding: 20px;
     text-align: justify;
     font-size: 1rem;
-    width: calc(50% - 20px); /* 2 boxes in a row with spacing */
+    width: calc(50% - 20px);
     margin: 10px;
-    box-sizing: border-box; /* Include padding in width calculation */
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
 }
 
 .box h2 {
-    font-size: 1.5rem; /* Smaller heading size */
+    font-size: 1.5rem;
     font-family: "Pirata One", system-ui;
     color: white;
     text-align: center;
@@ -185,25 +156,28 @@ body::before {
 .box p {
     font-size: 1rem;
     margin-top: 0;
-    font-weight: 300;
     line-height: 1.6;
-    font-weight: 500
+    font-weight: 500;
 }
 
 footer {
     background: linear-gradient(to right, orange 0%, transparent 130%);
     text-align: center;
     padding: 10px 0;
-    font-size: 1rem; /* 16px */
-    margin-top: auto; /* Pushes the footer to the bottom */
+    font-size: 1rem;
+    margin-top: auto;
 }
 
-/* Responsive Design for Phone */
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+/* For Tablets and smaller devices */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 15px;
     }
 
     .logo {
@@ -212,69 +186,90 @@ footer {
     }
 
     .association-name {
-        font-size: 2.052rem; /* Decreased by 5% (from 2.16rem to 2.052rem) */
+        font-size: 1.5rem;
     }
 
     .navbar {
-        font-size: 0.875rem; /* 14px */
+        align-items: center;
         gap: 10px;
+        font-size: 0.675rem;
     }
 
     .hinditext {
-        font-size: 2.5rem; /* 40px */
+        font-size: 2.5rem;
         margin-top: 10px;
     }
 
     .engtext {
-        font-size: 1.5rem; /* 24px */
+        font-size: 1.5rem;
         margin-top: 5px;
     }
 
     .about-dhsa {
         padding: 15px;
-        font-size: 0.875rem; /* 14px */
     }
 
     .about-dhsa h2 {
-        font-size: 1.75rem; /* 28px */
+        font-size: 1.75rem;
     }
 
     .about-dhsa p {
-        font-size: 0.875rem; /* 14px */
+        font-size: 0.875rem;
     }
 
     .boxes-container {
-        flex-direction: column; /* Stack boxes vertically on smaller screens */
+        flex-direction: column;
     }
 
     .box {
-        width: 100%; /* 1 box per row on mobile */
-        margin: 10px 0; /* Add vertical spacing */
+        width: 100%;
+        margin: 10px 0;
     }
 
     .box h2 {
-        font-size: 1.5rem; /* Adjust heading size for smaller screens */
+        font-size: 1.5rem;
     }
 
     .box p {
-        font-size: 0.875rem; /* Adjust text size for smaller screens */
+        font-size: 0.875rem;
     }
 
     footer {
-        font-size: 0.875rem; /* 14px */
+        font-size: 0.875rem;
     }
 }
 
+/* For larger mobile phones */
+@media (max-width: 600px) {
+    .navbar {
+        gap: 5px;
+        width: 100%;
+        padding: 0 5px;
+    }
+    .navbar a {
+        font-size: 0.675rem;
+        padding: 8px 10px;
+        min-width: unset;
+        text-align: center;
+        border-bottom: none;
+    }
+}
+
+/* For smaller mobile phones */
 @media (max-width: 480px) {
-    .association-name {
-        font-size: 1.5rem; /* Decreased by 5% (from 1.8rem to 1.71rem) */
+    .hinditext {
+        font-size: 2rem;
+    }
+
+    .engtext {
+        font-size: 1.2rem;
     }
 
     .box h2 {
-        font-size: 1.25rem; /* Further adjust heading size for mobile */
+        font-size: 1.25rem;
     }
 
     .box p {
-        font-size: 0.75rem; /* Further adjust text size for mobile */
+        font-size: 0.75rem;
     }
 }

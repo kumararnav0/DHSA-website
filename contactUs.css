@@ -200,6 +200,19 @@ footer {
         grid-template-columns: repeat(3, 1fr); /* Still three columns */
         gap: 10px; /* Reduce gap for smaller screens */
     }
+    logo {
+        height: 80px;
+        width: 80px;
+    }
+
+    .association-name {
+        font-size: 1.5rem; /* Decreased by 5% (from 2.16rem to 2.052rem) */
+    }
+
+    .navbar {
+        font-size: 0.675rem; /* 14px */
+        gap: 10px;
+    }
 
     .tile {
         aspect-ratio: 1; /* Maintain square shape */

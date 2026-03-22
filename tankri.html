@@ -3,203 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delhi Himachal Student Association</title>
-    <link rel="stylesheet" href="magazine.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Takri Keyboard</title>
+    <meta name="description" content="Use the DHSA Tankri keyboard to practice and type in the Takri script with a cleaner, guided layout.">
+    <title>Tankri Keyboard | DHSA</title>
+    <link rel="stylesheet" href="home.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            touch-action: manipulation;
-            background-color: #f0f4f8; /* Light blue-gray background */
+        body.tankri-page {
+            min-height: 100vh;
         }
+
+        .tankri-page .site-header {
+            position: static;
+        }
+
+        .tankri-main {
+            width: min(1240px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 32px 0 56px;
+        }
+
+        .tankri-shell {
+            display: grid;
+            gap: 24px;
+        }
+
+        .tankri-intro,
+        .tankri-board {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--surface);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+        }
+
+        .tankri-intro {
+            padding: clamp(24px, 4vw, 38px);
+        }
+
+        .tankri-intro h1 {
+            margin: 10px 0 12px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.3rem, 4vw, 4rem);
+            line-height: 0.95;
+        }
+
+        .tankri-intro p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .tankri-board {
+            padding: clamp(16px, 3vw, 26px);
+        }
+
+        .keyboard-frame {
+            background: rgba(255, 252, 247, 0.96);
+            border: 1px solid rgba(187, 91, 20, 0.08);
+            border-radius: 24px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+        }
+
         .keyboard-key {
             transition: all 0.1s ease-in-out;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 6px 14px rgba(60, 26, 4, 0.08);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             line-height: 1.2;
-            height: 3.75rem; /* 60px */
-            border-radius: 0.75rem; /* 12px */
-            background-color: #ffffff;
-            font-weight: 500;
-            color: #1f2937; /* gray-800 */
-            border-bottom: 2px solid #d1d5db; /* gray-300 */
+            height: 3.75rem;
+            border-radius: 0.9rem;
+            background-color: #fffdf9;
+            font-weight: 600;
+            color: #342116;
+            border: 1px solid rgba(187, 91, 20, 0.08);
+            border-bottom: 3px solid rgba(124, 51, 3, 0.18);
             flex-grow: 1;
         }
+
         .keyboard-key:active {
-            transform: scale(0.96) translateY(1px);
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            transform: scale(0.97) translateY(1px);
+            box-shadow: 0 2px 6px rgba(60, 26, 4, 0.08);
             border-bottom-width: 1px;
         }
+
         #keyboard-container {
             user-select: none;
-            background-color: #dbeafe; /* blue-100 */
-            padding: 0.75rem;
-            border-radius: 1rem; /* 16px */
+            background: linear-gradient(180deg, rgba(255, 241, 224, 0.95), rgba(250, 234, 211, 0.98));
+            padding: 0.9rem;
+            border-radius: 1.2rem;
         }
+
         .takri-char {
-            font-size: 1.375rem; /* 22px */
+            font-size: 1.375rem;
         }
+
         .hindi-sub {
-            font-size: 0.75rem; /* 12px */
-            color: #6b7280; /* gray-500 */
+            font-size: 0.75rem;
+            color: #8f715d;
         }
+
         .special-key {
-            background-color: #bfdbfe; /* blue-200 */
-            border-bottom-color: #93c5fd; /* blue-300 */
+            background-color: #f3d7bc;
+            border-bottom-color: #cd9366;
         }
+
         .send-key {
-            background-color: #3b82f6; /* blue-500 */
-            border-bottom-color: #1d4ed8; /* blue-700 */
+            background: linear-gradient(135deg, #cb661c, #933d09);
+            border-bottom-color: #742d02;
             color: white;
         }
+
         .shift-key.active {
-            background-color: #93c5fd; /* blue-300 */
-            color: #1e3a8a; /* blue-900 */
+            background-color: #efc9a5;
+            color: #7c3303;
+        }
+
+        .tankri-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        @media (max-width: 640px) {
+            .tankri-main {
+                width: calc(100% - 20px);
+            }
         }
     </style>
 </head>
-<body>
-    <div class="header-container">
-        <div class="logo-container">
-            <img src="background/logo.png" class="logo" alt="Delhi Himachal Student Association Logo">
-            <div class="association-name">
-                Delhi Himachal Students' Association
+<body class="tankri-page">
+    <header class="site-header">
+        <div class="brand">
+            <img src="background/logo.png" alt="Delhi Himachal Students' Association logo" class="brand-logo" width="96" height="96">
+            <div>
+                <p class="brand-kicker">Community • Culture • Connection</p>
+                <h1 class="brand-title">Delhi Himachal Students' Association</h1>
             </div>
         </div>
-        <div class="navbar">
-            <a href="home.html">Home</a>
-            <a href="magazine.html">Magazine</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="events.html">Events</a>
-            <a href="register.html">Register</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="tankri.html">Tankri</a>
-            </div>
-        </div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="site-nav" id="primary-nav" aria-label="Primary navigation">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#updates">Updates</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#magazine">Magazine</a>
+            <a href="index.html#register">Register</a>
+            <a href="tankri.html" class="active">Tankri</a>
+            <a href="index.html#gallery">Gallery</a>
+        </nav>
+    </header>
 
-        <!-- Add spacing between header/navbar and Tankri keyboard menu -->
-        <div style="margin-bottom: 24px;"></div>
-
-    <div class="w-full max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-4 sm:p-6">
-        <h1 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-2">Tankri Keyboard (टांकरी कीबोर्ड) 𑚔𑚭𑚫𑚊𑚤𑚯</h1>
-        <p class="text-center text-gray-500 mb-6">A QWERTY-based layout for intuitive typing.</p>
-        
-        <div class="relative">
-            <textarea id="output" rows="6" class="w-full p-4 pr-12 border-2 border-gray-200 rounded-xl text-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 mb-6 transition" placeholder="Your Takri text will appear here..."></textarea>
-            <button id="copy-button" class="absolute top-4 right-4 text-gray-400 hover:text-blue-500 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-            </button>
-            <div id="copy-feedback" class="absolute top-12 right-4 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 transition-opacity">Copied!</div>
-        </div>
-
-        <div id="keyboard-container">
-            <!-- Main Keyboard View -->
-            <div id="main-view">
-                <!-- Row 1 (10 keys) -->
-                <div class="flex justify-center gap-1.5 mb-1.5">
-                    <button class="keyboard-key" data-key="𑚫" data-shift-key="𑚬" data-hindi-key="ं" data-hindi-shift-key="ँ"><span class="takri-char">𑚫</span><span class="hindi-sub">ं</span></button>
-                    <button class="keyboard-key" data-key="𑚲" data-shift-key="𑚆" data-hindi-key="े" data-hindi-shift-key="ए"><span class="takri-char">𑚲</span><span class="hindi-sub">े</span></button>
-                    <button class="keyboard-key" data-key="𑚤" data-hindi-key="र"><span class="takri-char">𑚤</span><span class="hindi-sub">र</span></button>
-                    <button class="keyboard-key" data-key="𑚙" data-shift-key="𑚚" data-hindi-key="त" data-hindi-shift-key="थ"><span class="takri-char">𑚙</span><span class="hindi-sub">त</span></button>
-                    <button class="keyboard-key" data-key="𑚔" data-shift-key="𑚕" data-hindi-key="ट" data-hindi-shift-key="ठ"><span class="takri-char">𑚔</span><span class="hindi-sub">ट</span></button>
-                    <button class="keyboard-key" data-key="𑚣" data-hindi-key="य"><span class="takri-char">𑚣</span><span class="hindi-sub">य</span></button>
-                    <button class="keyboard-key" data-key="𑚰" data-shift-key="𑚅" data-hindi-key="ु" data-hindi-shift-key="ऊ"><span class="takri-char">𑚰</span><span class="hindi-sub">ु</span></button>
-                    <button class="keyboard-key" data-key="𑚮" data-shift-key="𑚯" data-hindi-key="ि" data-hindi-shift-key="ी"><span class="takri-char">𑚮</span><span class="hindi-sub">ि</span></button>
-                    <button class="keyboard-key" data-key="𑚴" data-shift-key="𑚈" data-hindi-key="ो" data-hindi-shift-key="ओ"><span class="takri-char">𑚴</span><span class="hindi-sub">ो</span></button>
-                    <button class="keyboard-key" data-key="𑚞" data-shift-key="𑚟" data-hindi-key="प" data-hindi-shift-key="फ"><span class="takri-char">𑚞</span><span class="hindi-sub">प</span></button>
-                </div>
-                <!-- Row 2 (9 keys) -->
-                <div class="flex justify-center gap-1.5 mb-1.5 px-[5%]">
-                    <button class="keyboard-key" data-key="𑚭" data-shift-key="𑚁" data-hindi-key="ा" data-hindi-shift-key="आ"><span class="takri-char">𑚭</span><span class="hindi-sub">ा</span></button>
-                    <button class="keyboard-key" data-key="𑚨" data-shift-key="𑚧" data-hindi-key="स" data-hindi-shift-key="श"><span class="takri-char">𑚨</span><span class="hindi-sub">स</span></button>
-                    <button class="keyboard-key" data-key="𑚛" data-shift-key="𑚜" data-hindi-key="द" data-hindi-shift-key="ध"><span class="takri-char">𑚛</span><span class="hindi-sub">द</span></button>
-                    <button class="keyboard-key" data-key="𑚖" data-shift-key="𑚗" data-hindi-key="ड" data-hindi-shift-key="ढ"><span class="takri-char">𑚖</span><span class="hindi-sub">ड</span></button>
-                    <button class="keyboard-key" data-key="𑚌" data-shift-key="𑚍" data-hindi-key="ग" data-hindi-shift-key="घ"><span class="takri-char">𑚌</span><span class="hindi-sub">ग</span></button>
-                    <button class="keyboard-key" data-key="𑚩" data-hindi-key="ह"><span class="takri-char">𑚩</span><span class="hindi-sub">ह</span></button>
-                    <button class="keyboard-key" data-key="𑚑" data-shift-key="𑚒" data-hindi-key="ज" data-hindi-shift-key="झ"><span class="takri-char">𑚑</span><span class="hindi-sub">ज</span></button>
-                    <button class="keyboard-key" data-key="𑚊" data-shift-key="𑚋" data-hindi-key="क" data-hindi-shift-key="ख"><span class="takri-char">𑚊</span><span class="hindi-sub">क</span></button>
-                    <button class="keyboard-key" data-key="𑚥" data-hindi-key="ल"><span class="takri-char">𑚥</span><span class="hindi-sub">ल</span></button>
-                </div>
-                <!-- Row 3 (7 keys) -->
-                <div class="flex justify-center gap-1.5 mb-1.5">
-                    <button id="shift-key" class="keyboard-key special-key" style="flex-grow: 1.5;">⇧</button>
-                    <button class="keyboard-key" data-key="𑚸" data-hindi-key="ष"><span class="takri-char">𑚸</span><span class="hindi-sub">ष</span></button>
-                    <button class="keyboard-key" data-key="𑚶" data-shift-key="𑚀" data-hindi-key="्" data-hindi-shift-key="अ"><span class="takri-char">𑚶</span><span class="hindi-sub">्</span></button>
-                    <button class="keyboard-key" data-key="𑚏" data-shift-key="𑚐" data-hindi-key="च" data-hindi-shift-key="छ"><span class="takri-char">𑚏</span><span class="hindi-sub">च</span></button>
-                    <button class="keyboard-key" data-key="𑚦" data-hindi-key="व"><span class="takri-char">𑚦</span><span class="hindi-sub">व</span></button>
-                    <button class="keyboard-key" data-key="𑚠" data-shift-key="𑚡" data-hindi-key="ब" data-hindi-shift-key="भ"><span class="takri-char">𑚠</span><span class="hindi-sub">ब</span></button>
-                    <button class="keyboard-key" data-key="𑚝" data-shift-key="𑚘" data-hindi-key="न" data-hindi-shift-key="ण"><span class="takri-char">𑚝</span><span class="hindi-sub">न</span></button>
-                    <button class="keyboard-key" data-key="𑚢" data-hindi-key="म"><span class="takri-char">𑚢</span><span class="hindi-sub">म</span></button>
-                    <button id="backspace" class="keyboard-key special-key" style="flex-grow: 1.5;">⌫</button>
-                </div>
-                <!-- Row 4 -->
-                <div class="flex justify-center gap-1.5">
-                    <button id="numbers-key" class="keyboard-key special-key" style="flex-grow: 1.5;">123</button>
-                    <button class="keyboard-key" data-key=" " style="flex-grow: 5;">Space</button>
-                    <button id="send-key" class="keyboard-key send-key" style="flex-grow: 1.5;">Send</button>
+    <main class="tankri-main">
+        <section class="tankri-shell">
+            <div class="tankri-intro">
+                <p class="section-kicker">Tankri Keyboard</p>
+                <h1>Practice Takri in a cleaner, more focused workspace</h1>
+                <p>
+                    This keyboard now follows the same DHSA visual system as the main website, while keeping the typing experience simple and usable. You can type, copy, switch layouts, and explore the script in one place.
+                </p>
+                <div class="tankri-tools">
+                    <a class="button button-secondary" href="index.html#tankri">Back to Main Site</a>
                 </div>
             </div>
-             <!-- Numbers/Symbols View -->
-            <div id="numbers-view" class="hidden">
-                 <div class="flex justify-center gap-1.5 mb-1.5">
-                    <button class="keyboard-key" data-key="𑛁"><span class="takri-char">𑛁</span><span class="hindi-sub">1</span></button>
-                    <button class="keyboard-key" data-key="𑛂"><span class="takri-char">𑛂</span><span class="hindi-sub">2</span></button>
-                    <button class="keyboard-key" data-key="𑛃"><span class="takri-char">𑛃</span><span class="hindi-sub">3</span></button>
-                    <button class="keyboard-key" data-key="𑛄"><span class="takri-char">𑛄</span><span class="hindi-sub">4</span></button>
-                    <button class="keyboard-key" data-key="𑛅"><span class="takri-char">𑛅</span><span class="hindi-sub">5</span></button>
-                    <button class="keyboard-key" data-key="𑛆"><span class="takri-char">𑛆</span><span class="hindi-sub">6</span></button>
-                    <button class="keyboard-key" data-key="𑛇"><span class="takri-char">𑛇</span><span class="hindi-sub">7</span></button>
-                    <button class="keyboard-key" data-key="𑛈"><span class="takri-char">𑛈</span><span class="hindi-sub">8</span></button>
-                    <button class="keyboard-key" data-key="𑛉"><span class="takri-char">𑛉</span><span class="hindi-sub">9</span></button>
-                    <button class="keyboard-key" data-key="𑛀"><span class="takri-char">𑛀</span><span class="hindi-sub">0</span></button>
-                </div>
-                 <div class="flex justify-center gap-1.5 mb-1.5">
-                    <button class="keyboard-key" data-key="@">@</button>
-                    <button class="keyboard-key" data-key="#">#</button>
-                    <button class="keyboard-key" data-key="$">$</button>
-                    <button class="keyboard-key" data-key="_">_</button>
-                    <button class="keyboard-key" data-key="&">&</button>
-                    <button class="keyboard-key" data-key="-">-</button>
-                    <button class="keyboard-key" data-key="+">+</button>
-                    <button class="keyboard-key" data-key="(">(</button>
-                    <button class="keyboard-key" data-key=")">)</button>
-                    <button class="keyboard-key" data-key="/">/</button>
-                 </div>
-                 <div class="flex justify-center gap-1.5 mb-1.5">
-                    <button class="keyboard-key" data-key='"'><span class="takri-char">"</span></button>
-                    <button class="keyboard-key" data-key="'"><span class="takri-char">'</span></button>
-                    <button class="keyboard-key" data-key=":">:</button>
-                    <button class="keyboard-key" data-key=";">;</button>
-                    <button class="keyboard-key" data-key="!">!</button>
-                    <button class="keyboard-key" data-key="?">?</button>
-                    <button class="keyboard-key" data-key="𑚷"><span class="takri-char">𑚷</span><span class="hindi-sub">़</span></button>
-                    <button class="keyboard-key" data-key="𑚹"><span class="takri-char">𑚹</span><span class="hindi-sub">ः</span></button>
-                    <button class="keyboard-key" data-key="।"><span class="takri-char">।</span><span class="hindi-sub">Danda</span></button>
-                    <button class="keyboard-key" data-key="॥"><span class="takri-char">॥</span><span class="hindi-sub">Double</span></button>
-                </div>
-                <div class="flex justify-center gap-1.5">
-                    <button id="abc-key" class="keyboard-key special-key" style="flex-grow: 1.5;">ABC</button>
-                    <button class="keyboard-key" data-key=" " style="flex-grow: 5;">Space</button>
-                    <button id="backspace-num" class="keyboard-key special-key" style="flex-grow: 1.5;">⌫</button>
+
+            <div class="tankri-board">
+                <div class="w-full mx-auto keyboard-frame p-4 sm:p-6">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-center text-stone-800 mb-2">Tankri Keyboard (टांकरी कीबोर्ड) 𑚔𑚭𑚫𑚊𑚤𑚯</h2>
+                    <p class="text-center text-stone-500 mb-6">A QWERTY-based layout for intuitive typing.</p>
+                    
+                    <div class="relative">
+                        <textarea id="output" rows="6" class="w-full p-4 pr-12 border-2 border-orange-100 rounded-xl text-2xl focus:ring-2 focus:ring-orange-400 focus:border-orange-300 mb-6 transition" placeholder="Your Takri text will appear here..."></textarea>
+                        <button id="copy-button" class="absolute top-4 right-4 text-stone-400 hover:text-orange-500 transition" type="button" aria-label="Copy text">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </button>
+                        <div id="copy-feedback" class="absolute top-12 right-4 bg-stone-800 text-white text-xs rounded py-1 px-2 opacity-0 transition-opacity">Copied!</div>
+                    </div>
+
+                    <div id="keyboard-container">
+                        <div id="main-view">
+                            <div class="flex justify-center gap-1.5 mb-1.5">
+                                <button class="keyboard-key" data-key="𑚫" data-shift-key="𑚬" data-hindi-key="ं" data-hindi-shift-key="ँ"><span class="takri-char">𑚫</span><span class="hindi-sub">ं</span></button>
+                                <button class="keyboard-key" data-key="𑚲" data-shift-key="𑚆" data-hindi-key="े" data-hindi-shift-key="ए"><span class="takri-char">𑚲</span><span class="hindi-sub">े</span></button>
+                                <button class="keyboard-key" data-key="𑚤" data-hindi-key="र"><span class="takri-char">𑚤</span><span class="hindi-sub">र</span></button>
+                                <button class="keyboard-key" data-key="𑚙" data-shift-key="𑚚" data-hindi-key="त" data-hindi-shift-key="थ"><span class="takri-char">𑚙</span><span class="hindi-sub">त</span></button>
+                                <button class="keyboard-key" data-key="𑚔" data-shift-key="𑚕" data-hindi-key="ट" data-hindi-shift-key="ठ"><span class="takri-char">𑚔</span><span class="hindi-sub">ट</span></button>
+                                <button class="keyboard-key" data-key="𑚣" data-hindi-key="य"><span class="takri-char">𑚣</span><span class="hindi-sub">य</span></button>
+                                <button class="keyboard-key" data-key="𑚰" data-shift-key="𑚅" data-hindi-key="ु" data-hindi-shift-key="ऊ"><span class="takri-char">𑚰</span><span class="hindi-sub">ु</span></button>
+                                <button class="keyboard-key" data-key="𑚮" data-shift-key="𑚯" data-hindi-key="ि" data-hindi-shift-key="ी"><span class="takri-char">𑚮</span><span class="hindi-sub">ि</span></button>
+                                <button class="keyboard-key" data-key="𑚴" data-shift-key="𑚈" data-hindi-key="ो" data-hindi-shift-key="ओ"><span class="takri-char">𑚴</span><span class="hindi-sub">ो</span></button>
+                                <button class="keyboard-key" data-key="𑚞" data-shift-key="𑚟" data-hindi-key="प" data-hindi-shift-key="फ"><span class="takri-char">𑚞</span><span class="hindi-sub">प</span></button>
+                            </div>
+                            <div class="flex justify-center gap-1.5 mb-1.5 px-[5%]">
+                                <button class="keyboard-key" data-key="𑚭" data-shift-key="𑚁" data-hindi-key="ा" data-hindi-shift-key="आ"><span class="takri-char">𑚭</span><span class="hindi-sub">ा</span></button>
+                                <button class="keyboard-key" data-key="𑚨" data-shift-key="𑚧" data-hindi-key="स" data-hindi-shift-key="श"><span class="takri-char">𑚨</span><span class="hindi-sub">स</span></button>
+                                <button class="keyboard-key" data-key="𑚛" data-shift-key="𑚜" data-hindi-key="द" data-hindi-shift-key="ध"><span class="takri-char">𑚛</span><span class="hindi-sub">द</span></button>
+                                <button class="keyboard-key" data-key="𑚖" data-shift-key="𑚗" data-hindi-key="ड" data-hindi-shift-key="ढ"><span class="takri-char">𑚖</span><span class="hindi-sub">ड</span></button>
+                                <button class="keyboard-key" data-key="𑚌" data-shift-key="𑚍" data-hindi-key="ग" data-hindi-shift-key="घ"><span class="takri-char">𑚌</span><span class="hindi-sub">ग</span></button>
+                                <button class="keyboard-key" data-key="𑚩" data-hindi-key="ह"><span class="takri-char">𑚩</span><span class="hindi-sub">ह</span></button>
+                                <button class="keyboard-key" data-key="𑚑" data-shift-key="𑚒" data-hindi-key="ज" data-hindi-shift-key="झ"><span class="takri-char">𑚑</span><span class="hindi-sub">ज</span></button>
+                                <button class="keyboard-key" data-key="𑚊" data-shift-key="𑚋" data-hindi-key="क" data-hindi-shift-key="ख"><span class="takri-char">𑚊</span><span class="hindi-sub">क</span></button>
+                                <button class="keyboard-key" data-key="𑚥" data-hindi-key="ल"><span class="takri-char">𑚥</span><span class="hindi-sub">ल</span></button>
+                            </div>
+                            <div class="flex justify-center gap-1.5 mb-1.5">
+                                <button id="shift-key" class="keyboard-key special-key" style="flex-grow: 1.5;" type="button">⇧</button>
+                                <button class="keyboard-key" data-key="𑚸" data-hindi-key="ष"><span class="takri-char">𑚸</span><span class="hindi-sub">ष</span></button>
+                                <button class="keyboard-key" data-key="𑚶" data-shift-key="𑚀" data-hindi-key="्" data-hindi-shift-key="अ"><span class="takri-char">𑚶</span><span class="hindi-sub">्</span></button>
+                                <button class="keyboard-key" data-key="𑚏" data-shift-key="𑚐" data-hindi-key="च" data-hindi-shift-key="छ"><span class="takri-char">𑚏</span><span class="hindi-sub">च</span></button>
+                                <button class="keyboard-key" data-key="𑚦" data-hindi-key="व"><span class="takri-char">𑚦</span><span class="hindi-sub">व</span></button>
+                                <button class="keyboard-key" data-key="𑚠" data-shift-key="𑚡" data-hindi-key="ब" data-hindi-shift-key="भ"><span class="takri-char">𑚠</span><span class="hindi-sub">ब</span></button>
+                                <button class="keyboard-key" data-key="𑚝" data-shift-key="𑚘" data-hindi-key="न" data-hindi-shift-key="ण"><span class="takri-char">𑚝</span><span class="hindi-sub">न</span></button>
+                                <button class="keyboard-key" data-key="𑚢" data-hindi-key="म"><span class="takri-char">𑚢</span><span class="hindi-sub">म</span></button>
+                                <button id="backspace" class="keyboard-key special-key" style="flex-grow: 1.5;" type="button">⌫</button>
+                            </div>
+                            <div class="flex justify-center gap-1.5">
+                                <button id="numbers-key" class="keyboard-key special-key" style="flex-grow: 1.5;" type="button">123</button>
+                                <button class="keyboard-key" data-key=" " style="flex-grow: 5;" type="button">Space</button>
+                                <button id="send-key" class="keyboard-key send-key" style="flex-grow: 1.5;" type="button">Send</button>
+                            </div>
+                        </div>
+                        <div id="numbers-view" class="hidden">
+                            <div class="flex justify-center gap-1.5 mb-1.5">
+                                <button class="keyboard-key" data-key="𑛁" type="button"><span class="takri-char">𑛁</span><span class="hindi-sub">1</span></button>
+                                <button class="keyboard-key" data-key="𑛂" type="button"><span class="takri-char">𑛂</span><span class="hindi-sub">2</span></button>
+                                <button class="keyboard-key" data-key="𑛃" type="button"><span class="takri-char">𑛃</span><span class="hindi-sub">3</span></button>
+                                <button class="keyboard-key" data-key="𑛄" type="button"><span class="takri-char">𑛄</span><span class="hindi-sub">4</span></button>
+                                <button class="keyboard-key" data-key="𑛅" type="button"><span class="takri-char">𑛅</span><span class="hindi-sub">5</span></button>
+                                <button class="keyboard-key" data-key="𑛆" type="button"><span class="takri-char">𑛆</span><span class="hindi-sub">6</span></button>
+                                <button class="keyboard-key" data-key="𑛇" type="button"><span class="takri-char">𑛇</span><span class="hindi-sub">7</span></button>
+                                <button class="keyboard-key" data-key="𑛈" type="button"><span class="takri-char">𑛈</span><span class="hindi-sub">8</span></button>
+                                <button class="keyboard-key" data-key="𑛉" type="button"><span class="takri-char">𑛉</span><span class="hindi-sub">9</span></button>
+                                <button class="keyboard-key" data-key="𑛀" type="button"><span class="takri-char">𑛀</span><span class="hindi-sub">0</span></button>
+                            </div>
+                            <div class="flex justify-center gap-1.5 mb-1.5">
+                                <button class="keyboard-key" data-key="@" type="button">@</button>
+                                <button class="keyboard-key" data-key="#" type="button">#</button>
+                                <button class="keyboard-key" data-key="$" type="button">$</button>
+                                <button class="keyboard-key" data-key="_" type="button">_</button>
+                                <button class="keyboard-key" data-key="&" type="button">&</button>
+                                <button class="keyboard-key" data-key="-" type="button">-</button>
+                                <button class="keyboard-key" data-key="+" type="button">+</button>
+                                <button class="keyboard-key" data-key="(" type="button">(</button>
+                                <button class="keyboard-key" data-key=")" type="button">)</button>
+                                <button class="keyboard-key" data-key="/" type="button">/</button>
+                            </div>
+                            <div class="flex justify-center gap-1.5 mb-1.5">
+                                <button class="keyboard-key" data-key='"' type="button"><span class="takri-char">"</span></button>
+                                <button class="keyboard-key" data-key="'" type="button"><span class="takri-char">'</span></button>
+                                <button class="keyboard-key" data-key=":" type="button">:</button>
+                                <button class="keyboard-key" data-key=";" type="button">;</button>
+                                <button class="keyboard-key" data-key="!" type="button">!</button>
+                                <button class="keyboard-key" data-key="?" type="button">?</button>
+                                <button class="keyboard-key" data-key="𑚷" type="button"><span class="takri-char">𑚷</span><span class="hindi-sub">़</span></button>
+                                <button class="keyboard-key" data-key="𑚹" type="button"><span class="takri-char">𑚹</span><span class="hindi-sub">ः</span></button>
+                                <button class="keyboard-key" data-key="।" type="button"><span class="takri-char">।</span><span class="hindi-sub">Danda</span></button>
+                                <button class="keyboard-key" data-key="॥" type="button"><span class="takri-char">॥</span><span class="hindi-sub">Double</span></button>
+                            </div>
+                            <div class="flex justify-center gap-1.5">
+                                <button id="abc-key" class="keyboard-key special-key" style="flex-grow: 1.5;" type="button">ABC</button>
+                                <button class="keyboard-key" data-key=" " style="flex-grow: 5;" type="button">Space</button>
+                                <button id="backspace-num" class="keyboard-key special-key" style="flex-grow: 1.5;" type="button">⌫</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Designed and developed by <a href="https://www.linkedin.com/in/arnav-kumar-7a6a58254/" target="_blank" rel="noreferrer">Arnav Bhatt</a></p>
+    </footer>
 
     <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const siteNav = document.querySelector('.site-nav');
+        const siteNavLinks = document.querySelectorAll('.site-nav a');
+
+        if (navToggle && siteNav) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = siteNav.classList.toggle('is-open');
+                navToggle.setAttribute('aria-expanded', String(isOpen));
+            });
+
+            siteNavLinks.forEach((link) => {
+                link.addEventListener('click', () => {
+                    siteNav.classList.remove('is-open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
         const output = document.getElementById('output');
         const keyboardContainer = document.getElementById('keyboard-container');
         const mainView = document.getElementById('main-view');
@@ -241,7 +343,7 @@
             isShifted = !isShifted;
             shiftKey.classList.toggle('active', isShifted);
             
-            mainView.querySelectorAll('.keyboard-key[data-key]').forEach(key => {
+            mainView.querySelectorAll('.keyboard-key[data-key]').forEach((key) => {
                 const takriCharSpan = key.querySelector('.takri-char');
                 const hindiSubSpan = key.querySelector('.hindi-sub');
                 if (!takriCharSpan || !hindiSubSpan) return;
@@ -270,7 +372,7 @@
 
             if (isShifted && shiftValue) {
                 insertText(shiftValue);
-                if (isShifted) toggleShift(); // Turn off shift after one use
+                if (isShifted) toggleShift();
             } else if (keyValue) {
                 insertText(keyValue);
             }
@@ -291,18 +393,15 @@
         });
 
         sendKey.addEventListener('click', () => {
-            // In a real app, this would send the text. Here we simulate it.
-            console.log("Sending:", output.value);
             output.classList.add('border-green-500', 'ring-green-500');
             setTimeout(() => {
                 output.classList.remove('border-green-500', 'ring-green-500');
-                output.value = ''; // Clear the text area after sending
+                output.value = '';
             }, 500);
         });
 
         copyButton.addEventListener('click', () => {
             output.select();
-            // Using document.execCommand for broader compatibility in sandboxed environments
             try {
                 document.execCommand('copy');
                 copyFeedback.style.opacity = '1';
@@ -312,27 +411,15 @@
             } catch (err) {
                 console.error('Failed to copy text: ', err);
             }
-            window.getSelection().removeAllRanges(); // Deselect
+            window.getSelection().removeAllRanges();
         });
 
-        // Set initial key display
-        mainView.querySelectorAll('.keyboard-key[data-key]').forEach(key => {
+        mainView.querySelectorAll('.keyboard-key[data-key]').forEach((key) => {
             const mainChar = key.querySelector('.takri-char');
             if (mainChar) {
                 mainChar.textContent = key.dataset.key;
             }
         });
-    </script> 
-
-  
-
-
-
-
-
-
-    <footer>
-        | Designed and Developed by <a href="https://www.linkedin.com/in/arnav-kumar-7a6a58254/">Arnav Bhatt</a> |
-    </footer>
+    </script>
 </body>
 </html>

@@ -1,231 +1,241 @@
-@import url('https://fonts.googleapis.com/css2?family=Tan+Headline&family=Rozha+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spicy+Rice&family=Audiowide&family=Playfair+Display:wght@400;700&family=Pirata+One&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pirata+One&display=swap');
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     margin: 0;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    background-color: transparent; /* Ensure body background is transparent */
+    background: #f6ead7;
+    overflow-x: hidden;
 }
 
 body::before {
     content: '';
-    background-image: url('background/bg1.webp');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: fixed; /* Fix the background to the viewport */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    position: fixed;
+    inset: 0;
     z-index: -1;
-    opacity: 0.8;
+    background:
+        linear-gradient(rgba(50, 23, 0, 0.28), rgba(50, 23, 0, 0.2)),
+        url('background/bg1.webp') center / cover no-repeat;
 }
 
 .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
-    background: linear-gradient(to right, orange 0%, transparent 150%);
+    gap: 24px;
+    padding: 18px clamp(16px, 3vw, 32px);
+    background: linear-gradient(90deg, rgba(235, 131, 12, 0.95), rgba(235, 131, 12, 0.6) 45%, rgba(235, 131, 12, 0.05) 100%);
+    backdrop-filter: blur(12px);
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 5px; /* Reduced gap between logo and name */
+    gap: 14px;
 }
 
 .logo {
-    height: 100px;
     width: 100px;
-    border-radius: 50%; /* Makes the logo circular */
-    border: 3px solid white; /* Adds a border */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow */
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26);
 }
 
 .association-name {
-    font-size: 2.394rem;
+    font-size: clamp(2rem, 2vw + 1rem, 2.7rem);
     font-family: "Pirata One", system-ui;
     color: white;
-    font-weight: 400;
-    white-space: nowrap;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
 }
 
 .navbar {
     display: flex;
-    gap: 20px;
-    font-size: 1rem; /* 16px */
-    color: white;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 .navbar a {
-    text-decoration: none;
     color: white;
+    text-decoration: none;
     white-space: nowrap;
-    transition: color 0.3s ease; /* Smooth hover effect */
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 999px;
+    transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
-.navbar a:hover {
-    color: orange; /* Changes color on hover */
+.navbar a:hover,
+.navbar a[aria-current="page"] {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
 }
 
-footer {
-    background: linear-gradient(to right, orange 0%, transparent 130%);
-    text-align: center;
-    padding: 10px 0;
-    font-size: 1rem; /* 16px */
-    margin-top: auto; /* Pushes the footer to the bottom */
-}
-
-/* Events Page Styles */
 .events-container {
-    padding: 10px;
+    width: min(1100px, calc(100% - 32px));
+    margin: 24px auto 40px;
     text-align: center;
 }
 
 .events-container h1 {
-    font-size: 2.5rem;
-    color: black; /* Changed to black */
-    font-family: "Pirata One", system-ui; /* Same font as association name */
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow to the text */
+    margin: 0 0 18px;
+    color: white;
+    font-family: "Pirata One", system-ui;
+    font-size: clamp(2.2rem, 3vw, 3rem);
+    text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .event-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 10px;
-    padding: 10px;
-    max-width: 800px; /* Optional: Limit the width of the grid */
-    margin: 0 auto; /* Center the grid */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
 }
 
 .event-item {
-    position: relative;
-    cursor: pointer;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    border-radius: 22px;
+    box-shadow: 0 18px 40px rgba(16, 8, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-item:hover,
+.event-item:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 46px rgba(16, 8, 0, 0.26);
+    outline: none;
 }
 
 .event-item img {
-    width: 100%; /* Make the image fill the card */
-    height: auto;
+    width: 100%;
+    height: 100%;
     display: block;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.event-item:hover img {
-    transform: scale(1.1);
+.event-item:hover img,
+.event-item:focus-visible img {
+    transform: scale(1.04);
 }
 
-/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
+    inset: 0;
     z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
+    padding: 16px;
+    background: rgba(10, 7, 4, 0.82);
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
     position: relative;
+    width: min(760px, 100%);
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    margin: 40px auto;
+    padding: 28px;
+    border-radius: 24px;
+    background: rgba(255, 249, 240, 0.96);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(223, 106, 0, 0.14);
+    color: #7a3500;
+    font-size: 1.8rem;
     cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-}
-
 #eventTitle {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    margin: 0 0 12px;
+    font-size: clamp(1.8rem, 2vw, 2.3rem);
+    color: #7a3500;
 }
 
 #eventDescription {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    text-align: left;
+    color: #2a1b0d;
 }
 
-/* Responsive Design for Phone */
-@media (max-width: 768px) {
+footer {
+    margin-top: auto;
+    padding: 14px 16px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(90deg, rgba(235, 131, 12, 0.95), rgba(235, 131, 12, 0.3));
+}
+
+@media (max-width: 900px) {
     .header-container {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        align-items: stretch;
+        text-align: center;
     }
 
+    .logo-container,
+    .navbar {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
     .logo {
-        height: 80px;
-        width: 80px;
+        width: 84px;
+        height: 84px;
     }
 
     .association-name {
-        font-size: 1.5rem; /* Decreased by 5% (from 2.16rem to 2.052rem) */
+        font-size: 1.85rem;
     }
 
-    .navbar {
-        font-size: 0.675rem; /* 14px */
-        gap: 10px;
+    .navbar a {
+        padding: 8px 12px;
+        font-size: 0.92rem;
     }
 
-    .event-grid {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
-    }
-
-    footer {
-        font-size: 0.875rem; /* 14px */
+    .events-container {
+        width: calc(100% - 20px);
     }
 }
 
 @media (max-width: 480px) {
+    .header-container {
+        padding: 16px 10px;
+    }
+
     .association-name {
-        font-size: 1.5rem; /* Decreased by 5% (from 1.8rem to 1.71rem) */
+        font-size: 1.5rem;
     }
-}
-.event-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-}
 
-.event-item {
-    cursor: pointer;
-}
-
-@media (max-width: 600px) {
-    .event-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .navbar a {
+        font-size: 0.82rem;
+        padding: 8px 10px;
     }
-}
-h1{
-    margin-top: 2px;
-    margin-bottom: 5px;
+
+    .modal-content {
+        padding: 22px 18px;
+    }
+
+    #eventDescription {
+        font-size: 0.95rem;
+    }
 }

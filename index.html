@@ -3,79 +3,645 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delhi Himachal Student Association</title>
+    <meta name="description" content="Delhi Himachal Students' Association connects Himachali students in Delhi through culture, support, events, and community.">
+    <title>Delhi Himachal Students' Association</title>
     <link rel="stylesheet" href="home.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="header-container">
-        <div class="logo-container">
-            <img src="background/logo.png" class="logo" alt="Delhi Himachal Student Association Logo">
-            <div class="association-name">
-                Delhi Himachal Students' Association
+    <header class="site-header">
+        <div class="brand">
+            <img src="background/logo.png" alt="Delhi Himachal Students' Association logo" class="brand-logo" width="96" height="96" fetchpriority="high">
+            <div>
+                <p class="brand-kicker">Community • Culture • Connection</p>
+                <h1 class="brand-title">Delhi Himachal Students' Association</h1>
             </div>
         </div>
-        <div class="navbar">
-            <a href="home.html">Home</a>
-            <a href="magazine.html">Magazine</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="events.html">Events</a>
-            <a href="register.html">Register</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="tankri.html">Tankri</a>
-            
-        </div>
-    </div>
-    <div class="hinditext">
-        जननी जन्मभूमिश्च स्वर्गादपि गरीयसी
-    </div>
-    <div class="engtext">
-        "Uniting Cultures-Empowering Future"
-    </div>
-    <div class="about-dhsa">
-        <h2>About DHSA</h2>
-        <p>
-            The Delhi Himachal Students' Association (DHSA) serves as a dynamic bridge between the bustling capital city of Delhi and the serene hills of Himachal Pradesh. Our mission is to unite Himachali students living in Delhi, creating a platform that fosters growth, inclusivity, and collaboration.
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="site-nav" id="primary-nav" aria-label="Primary navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#updates">Updates</a>
+            <a href="#contact">Contact</a>
+            <a href="#magazine">Magazine</a>
+            <a href="#register">Register</a>
+            <a href="#tankri">Tankri</a>
+            <a href="#gallery">Gallery</a>
+        </nav>
+    </header>
 
-            As we bridge the gap between two distinct yet harmonious worlds, we invite every Himachali in Delhi to join hands, explore opportunities, and create lasting memories together. Through our various initiatives and events, we strive to nurture a sense of community and belonging while promoting cultural pride and togetherness.
-            
-            Join us on this journey of connection and empowerment as we continue to build a vibrant Himachali community in the heart of Delhi.
-        </p>            
-    </div>
+    <main>
+        <section class="hero section" id="home">
+            <div class="hero-copy">
+                <div class="hero-quote" aria-label="Sanskrit quote">
+                    <p class="quote-label">Guiding Line</p>
+                    <p class="quote-text">"अपि स्वर्णमयी लंका न मे लक्ष्मण रोचते।<br>
+जननी जन्मभूमिश्च स्वर्गादपि गरीयसी॥"</p>
+                </div>
+                <h2>Uniting Himachali students in Delhi through belonging, opportunity, and culture.</h2>
+                <p class="hero-text">
+                    DHSA is a student-led community that helps Himachali students in Delhi stay connected, celebrate their roots, and grow together through events, mentorship, and shared experiences.
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#register">Join the Community</a>
+                    <a class="button button-secondary" href="#updates">See Latest Updates</a>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <div class="stat-card">
+                    <span class="stat-value">2500+</span>
+                    <span class="stat-label">Students engaged through DHSA events</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">Culture</span>
+                    <span class="stat-label">Freshers, statehood celebrations, Diyali meetups, dham, and more</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">Support</span>
+                    <span class="stat-label">Academic guidance, friendships, collaboration, and a stronger student network</span>
+                </div>
+            </div>
+        </section>
 
-    <!-- New Section: 4 Boxes in a 2x2 Matrix -->
-    <div class="boxes-container">
-        <div class="box">
-            <h2>Academic Aid</h2>
-            <p>
-                We provide academic support to students, including study materials, mentorship, and guidance to help them excel in their studies.
-            </p>
-        </div>
-        <div class="box">
-            <h2>Cultural Fusion</h2>
-            <p>
-                Celebrate the rich culture of Himachal Pradesh through cultural events, festivals, and activities that bring students together.
-            </p>
-        </div>
-        <div class="box">
-            <h2>Exciting Events</h2>
-            <p>
-                Participate in exciting events like freshers' parties, annual gatherings, and competitions that make college life memorable.
-            </p>
-        </div>
-        <div class="box">
-            <h2>Lifelong Bonds</h2>
-            <p>
-                Build lifelong friendships and connections with fellow Himachali students, creating a strong support network.
-            </p>
-        </div>
-    </div>
+        <section class="section" id="about">
+            <div class="section-heading">
+                <p class="section-kicker">About DHSA</p>
+                <h2>A stronger home base for Himachali students in Delhi</h2>
+                <p>
+                    The Delhi Himachal Students' Association bridges the pace of Delhi with the warmth of Himachal Pradesh. We bring students together around shared identity, practical support, and meaningful experiences that make city life feel more connected.
+                </p>
+            </div>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <h3>Academic Aid</h3>
+                    <p>Peer support, guidance, and shared resources that help students settle in and move forward with confidence.</p>
+                </article>
+                <article class="feature-card">
+                    <h3>Cultural Fusion</h3>
+                    <p>Festivals, performances, food, and traditions that keep Himachali identity visible and celebrated in Delhi.</p>
+                </article>
+                <article class="feature-card">
+                    <h3>Exciting Events</h3>
+                    <p>Freshers, community celebrations, open gatherings, and flagship experiences that keep the student body active.</p>
+                </article>
+                <article class="feature-card">
+                    <h3>Lifelong Bonds</h3>
+                    <p>Friendships, mentorship, and shared memories that continue well beyond one college year or one campus.</p>
+                </article>
+            </div>
+        </section>
 
-    <footer>
-        | Designed and Developed by <a href="https://www.linkedin.com/in/arnav-kumar-7a6a58254/">Arnav Bhatt</a> |
+        <section class="section" id="updates">
+            <div class="section-heading">
+                <p class="section-kicker">Latest Updates</p>
+                <h2>Recent flagship moments from the community</h2>
+                <p>These highlights bring the newest major events together in one place so visitors can quickly understand what DHSA has been building.</p>
+            </div>
+            <div class="updates-shell">
+                <div class="event-links" role="tablist" aria-label="Event updates">
+                    <button class="event-link is-active" type="button" role="tab" aria-selected="true" aria-expanded="true" data-event-title="Shabashein 1.0" data-event-date="May 4, 2024" data-event-venue="Satyawati College Auditorium, University of Delhi" data-event-time="01:00 PM onwards" data-event-summary="An inauguration of cultural extravaganza celebrating Himachali tradition and unity." data-event-description="Shabashein 1.0 marked the grand inauguration of DHSA's annual cultural celebrations, bringing together over 2,500 attendees. The event was graced by Prof. Shashi Kumar Dhiman and other esteemed dignitaries. It showcased vibrant cultural performances, including Kinnauri and Gaddiyali Naati, reflecting the rich traditions of Himachal Pradesh. Around 1,600 participants enjoyed traditional Dhaam, adding authenticity to the experience. The highlight of the event was a soulful musical performance by Sunny Choudhary. Blending culture, talent, and togetherness, the event created a powerful sense of community and marked a memorable beginning to the association's yearly activities.">Shabashein 1.0</button>
+                    <button class="event-link" type="button" role="tab" aria-selected="false" aria-expanded="false" data-event-title="DU Admissions Webinar" data-event-date="August 3, 2024" data-event-venue="Online (Virtual Session)" data-event-time="11:00 AM onwards" data-event-summary="A guidance session helping students navigate DU admissions with clarity and confidence." data-event-description="The DU Admissions Webinar was organized by DHSA to assist freshers in understanding the university admission process. The session featured Prof. Suneel Kumar, who provided step-by-step guidance on form filling, fee structures, and preference list strategies. With participation from over 1,000 students, the webinar addressed common doubts and challenges faced during admissions. The interactive format allowed attendees to engage directly and gain clarity. This initiative reflected DHSA's commitment to supporting students academically and ensuring a smooth transition into university life.">DU Webinar</button>
+                    <button class="event-link" type="button" role="tab" aria-selected="false" aria-expanded="false" data-event-title="Freshers Meetup" data-event-date="September 15, 2024" data-event-venue="Seminar Hall, Ramjas College, University of Delhi" data-event-time="03:00 PM onwards" data-event-summary="A warm and interactive gathering to welcome new members into the DHSA family." data-event-description="The Freshers Meetup marked the first interactive event for new members of DHSA, creating a welcoming and friendly environment. The event encouraged open interaction between seniors and freshers, helping build meaningful connections. A lively Naati dance brought everyone together, celebrating Himachali culture and traditions. The atmosphere was filled with enthusiasm, laughter, and bonding moments. This meetup successfully laid the foundation for strong relationships within the community, ensuring that freshers felt comfortable, included, and excited to begin their journey with DHSA.">Freshers Meetup</button>
+                    <button class="event-link" type="button" role="tab" aria-selected="false" aria-expanded="false" data-event-title="Raunakein 1.0" data-event-date="September 23, 2024" data-event-venue="Ramjas College Auditorium, University of Delhi" data-event-time="12:00 PM onwards" data-event-summary="A grand freshers celebration filled with culture, performances, and connection." data-event-description="Raunakein 1.0 served as the flagship freshers event of DHSA, welcoming new members with great enthusiasm and scale. With a turnout of over 2,500 students, the event featured mesmerizing performances including Kinnauri Naati, Mix Naati, and musical acts. Distinguished guests such as D.S. Negi and academic dignitaries enhanced the event's significance. Over 3,000 attendees relished traditional Himachali Dhaam, strengthening cultural connection. The event created an energetic and inclusive atmosphere, allowing freshers to bond with seniors while celebrating shared heritage. Raunakein successfully combined entertainment, culture, and community spirit, leaving a lasting impression on everyone present.">Raunakein 1.0</button>
+                    <button class="event-link" type="button" role="tab" aria-selected="false" aria-expanded="false" data-event-title="Diyali 2024" data-event-date="October 21, 2024" data-event-venue="KMC Canteen Lawn, University of Delhi" data-event-time="Evening onwards" data-event-summary="A festive Diwali celebration blending tradition, culture, and joy." data-event-description="Diyali 2024 transformed the venue into a vibrant festive mela, celebrating the spirit of Diwali with great enthusiasm. The event featured food stalls offering Himachali delicacies, jewelry stalls, and mehndi artists, creating a lively and colorful atmosphere. Cultural performances, including singing and traditional Naati, captivated the audience and highlighted Himachali heritage. As the evening progressed, an open DJ session energized the crowd, blending tradition with modern celebration. The event brought together students from diverse backgrounds, fostering unity and festive joy while creating unforgettable memories rooted in culture and celebration.">Diyali 2024</button>
+                    <button class="event-link" type="button" role="tab" aria-selected="false" aria-expanded="false" data-event-title="Him Yuva Jan Kalyan Sangathan Function" data-event-date="November 17, 2024" data-event-venue="DTC Colony, Shaadipur, Patel Nagar, Delhi" data-event-time="Not specified" data-event-summary="A cultural showcase highlighting Himachali traditions through performances and collaboration." data-event-description="DHSA proudly participated in the annual function of Him Yuva Jan Kalyan Sangathan, presenting a series of cultural performances. The event featured traditional dances such as Gaddiyali Naati and Mix Naati, along with an engaging skit titled Dhoban. Musical performances added charm to the evening, while renowned artists further elevated the program. The event concluded with a DJ session, blending traditional and modern elements. This participation allowed DHSA to represent Himachali culture on a broader platform and strengthened its connection with the community through vibrant artistic expression.">Him Yuva Function</button>
+                    <button class="event-link" type="button" role="tab" aria-selected="false" aria-expanded="false" data-event-title="Cloth Donation Drive" data-event-date="December 7, 2024" data-event-venue="BBM Depot, Mukherjee Nagar, Delhi" data-event-time="02:30 PM onwards" data-event-summary="A community service initiative spreading warmth, kindness, and social responsibility." data-event-description="The Cloth Donation Drive was organized by DHSA in collaboration with DKSA and Pehchan NGO to support underprivileged communities during winter. Volunteers distributed clothes, stationery, and essential supplies to those in need. The event witnessed generous contributions and active participation from members, ensuring its success. This initiative highlighted the importance of compassion and collective effort in making a difference. By addressing real community needs, DHSA reinforced its commitment to social responsibility and demonstrated how student-led efforts can create meaningful impact.">Cloth Donation Drive</button>
+                    <button class="event-link" type="button" role="tab" aria-selected="false" aria-expanded="false" data-event-title="Himprabha 1.0" data-event-date="January 25, 2025" data-event-venue="Academic Auditorium, Kirori Mal College, University of Delhi" data-event-time="11:00 AM to 03:00 PM" data-event-summary="A Statehood Day celebration reflecting Himachali pride, culture, and unity." data-event-description="On the auspicious occasion of the 54th Himachal Statehood Day, the Delhi Himachal Students Association organized Himprabha, a vibrant cultural celebration that brought together students to honor the rich heritage of Himachal Pradesh. The event featured inspiring addresses by distinguished guests Govind Singh Thakur and Chetan Bragata, who motivated the youth with their insights. Cultural performances, including Pahadi music and student acts, added a soulful essence to the gathering. The celebration concluded with an energetic DJ session, creating a joyful and memorable atmosphere filled with pride, unity, and festive spirit.">Himprabha 1.0</button>
+                    <button class="event-link" type="button" role="tab" aria-selected="false" aria-expanded="false" data-event-title="DU Literature Festival Collaboration" data-event-date="February 21-22, 2025" data-event-venue="Shri Ram College of Commerce (SRCC), University of Delhi" data-event-time="Not specified" data-event-summary="An academic collaboration blending literature, history, and intellectual discussions." data-event-description="DHSA collaborated with the Delhi University Literature Festival, contributing to a dynamic academic and cultural experience. The event included book launches such as The British Makeover of India and Yodha I & II, along with an academic discussion on European politics. Renowned personalities and dignitaries participated, offering valuable insights and perspectives. Students gained exposure to intellectual discourse, literature, and contemporary issues. This collaboration enhanced academic engagement and provided a platform for learning beyond classrooms, strengthening DHSA's presence in scholarly and cultural spaces.">DU Lit Fest</button>
+                    <button class="event-link" type="button" role="tab" aria-selected="false" aria-expanded="false" data-event-title="Shabashein 2.0" data-event-date="April 15, 2025" data-event-venue="Auditorium, Ramjas College, University of Delhi" data-event-time="Not specified" data-event-summary="A grand cultural fest celebrating Himachal Foundation Day with energy and tradition." data-event-description="Shabashein 2.0 was held to celebrate Himachal Foundation Day, bringing together students for a vibrant cultural fest. The event featured performances including Gaddiyali Naati, Lahauli dance, Jhamakada, and Gidda, showcasing diverse traditions of Himachal Pradesh. Esteemed guests Dr. Lal Singh and Umesh Dutt Sharma inspired the audience with their words. Musical performances by Honey Negi and Dony Chauhan energized the crowd. The event concluded with a lively DJ session, uniting everyone in celebration. It successfully highlighted cultural richness while strengthening community bonds and festive spirit.">Shabashein 2.0</button>
+                    <button class="event-link" type="button" role="tab" aria-selected="false" aria-expanded="false" data-event-title="Raunakein 2.0" data-event-date="September 13, 2025" data-event-venue="Ramjas College Auditorium, University of Delhi" data-event-time="11:00 AM onwards" data-event-summary="A vibrant freshers celebration filled with culture, music, and community spirit." data-event-description="Raunakein 2.0 marked another grand freshers celebration organized by the Delhi Himachal Students Association, welcoming new members with enthusiasm and cultural pride. The event featured a series of engaging performances, including traditional Naati, cultural acts, and musical showcases that reflected the rich heritage of Himachal Pradesh. The presence of Chief Guest Sh. Ashish Chauhan added significance to the occasion. Attendees also enjoyed traditional Dhaam and an energetic open DJ session. The event created a lively and inclusive atmosphere, helping freshers connect, celebrate, and become part of the DHSA community.">Raunakein 2.0</button>
+                    <button class="event-link" type="button" role="tab" aria-selected="false" aria-expanded="false" data-event-title="Devbhoomi Ki Sewa - Cloth Donation Drive" data-event-date="October 19, 2025" data-event-venue="Kau Village, Bali Chowki, Mandi District, Himachal Pradesh" data-event-time="Not specified" data-event-summary="A humanitarian initiative bringing relief, hope, and solidarity to flood-affected communities." data-event-description="Under the initiative Devbhoomi Ki Sewa, the Delhi Himachal Students Association organized a Cloth Donation Drive to support families affected by floods and landslides in Himachal Pradesh. Conducted in collaboration with Delhi Kinnaur Students Association and Lahaul Spiti Students Association, the drive focused on distributing relief kits, essential clothing, and stationery to those in need. The initiative addressed the severe impact of monsoon disasters, providing both immediate aid and emotional support. Volunteers worked selflessly to ensure assistance reached every household, spreading hope, warmth, and positivity during difficult times while reinforcing the spirit of community service.">Devbhoomi Ki Sewa</button>
+                    <button class="event-link" type="button" role="tab" aria-selected="false" aria-expanded="false" data-event-title="Himprabha 2.0" data-event-date="January 24, 2026" data-event-venue="Academic Auditorium, Kirori Mal College (KMC), University of Delhi" data-event-time="11:00 AM onwards" data-event-summary="An academic seminar fostering dialogue, awareness, and digital responsibility among youth." data-event-description="Himprabha 2.0 was organized by the Delhi Himachal Students Association on the occasion of Himachal Pradesh Statehood Day, focusing on empowering youth through meaningful dialogue and awareness. Centered around the theme of discerning and challenging divisive digital narratives, the seminar provided a platform for thoughtful discussions and knowledge exchange. Esteemed guests Shri Padam Lal Negi and IPS officer Shalini Agnihotri delivered insightful talks, inspiring students to engage responsibly in the digital space. The event successfully combined academic discourse with social relevance, encouraging critical thinking, informed perspectives, and responsible participation among the youth.">Himprabha 2.0</button>
+                    <button class="event-link" type="button" role="tab" aria-selected="false" aria-expanded="false" data-event-title="Cloth Donation Drive (Statehood Day Initiative)" data-event-date="January 25, 2026" data-event-venue="Sanjay Basti, Timarpur, Delhi" data-event-time="02:00 PM onwards" data-event-summary="A community-driven initiative spreading warmth, compassion, and support to those in need." data-event-description="On the occasion of the 56th Himachal Pradesh Statehood Day, the Delhi Himachal Students Association collaborated with the Lahaul & Spiti Cultural Association to organize a Cloth Donation Drive. The initiative aimed to support underprivileged communities by distributing essential clothing and resources. Volunteers actively participated in collecting and distributing donations, ensuring that help reached those in need. The drive reflected the spirit of unity, kindness, and social responsibility. By combining celebration with service, the event highlighted the importance of giving back to society and making a meaningful impact in people's lives.">Statehood Cloth Drive</button>
+                    <button class="event-link" type="button" role="tab" aria-selected="false" aria-expanded="false" data-event-title="Him Milan - Samaveshi Rajya Samvaad" data-event-date="March 12, 2026" data-event-venue="Bhim Hall, Dr. Ambedkar International Centre" data-event-time="02:00 PM onwards" data-event-summary="An initiative promoting inclusive dialogue, cultural exchange, and community engagement." data-event-description="Him Milan - Samaveshi Rajya Samvaad (Himachal Pradesh Chapter) was organized to foster meaningful discussions on inclusive development, cultural identity, and community engagement. The event brought together participants to exchange ideas and perspectives on building a more inclusive state dialogue. It was graced by esteemed dignitaries including Shri Anurag Thakur, Hon'ble Member of Parliament and Chairman of the Parliamentary Standing Committee on Coal, Mines and Steel, and Shri Ajay Kumar Yadav, IPS, Principal Resident Commissioner of Himachal Pradesh. The event also featured vibrant cultural performances such as Naati, Harul, Kinnauri dance, Himachali Gidda, Gaddiyali, and Dogri dance, celebrating the rich cultural diversity of the region.">Him Milan</button>
+                </div>
+                <article class="event-detail-card" id="event-detail-card" aria-live="polite">
+                    <button class="event-detail-close" id="event-detail-close" type="button" aria-label="Close event details">Close</button>
+                    <p class="event-detail-date" id="event-date">May 4, 2024</p>
+                    <h3 id="event-title">Shabashein 1.0</h3>
+                    <p class="event-detail-summary" id="event-summary">An inauguration of cultural extravaganza celebrating Himachali tradition and unity.</p>
+                    <div class="event-meta">
+                        <div class="event-meta-item">
+                            <span class="event-meta-label">Venue</span>
+                            <span id="event-venue">Satyawati College Auditorium, University of Delhi</span>
+                        </div>
+                        <div class="event-meta-item">
+                            <span class="event-meta-label">Time</span>
+                            <span id="event-time">01:00 PM onwards</span>
+                        </div>
+                    </div>
+                    <p class="event-detail-description" id="event-description">Shabashein 1.0 marked the grand inauguration of DHSA's annual cultural celebrations, bringing together over 2,500 attendees. The event was graced by Prof. Shashi Kumar Dhiman and other esteemed dignitaries. It showcased vibrant cultural performances, including Kinnauri and Gaddiyali Naati, reflecting the rich traditions of Himachal Pradesh. Around 1,600 participants enjoyed traditional Dhaam, adding authenticity to the experience. The highlight of the event was a soulful musical performance by Sunny Choudhary. Blending culture, talent, and togetherness, the event created a powerful sense of community and marked a memorable beginning to the association's yearly activities.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="magazine">
+            <div class="section-heading">
+                <p class="section-kicker">Magazine</p>
+                <h2>Read the association magazine in one place</h2>
+                <p>The magazine is designed in A4 portrait format, so this section now presents it like a real publication preview instead of a cramped browser embed.</p>
+            </div>
+            <div class="magazine-shell">
+                <div class="magazine-showcase">
+                    <div class="magazine-preview-stack" aria-label="Magazine preview">
+                        <article class="a4-sheet a4-sheet-back">
+                            <div class="a4-frame">
+                                <iframe src="magazine.pdf#page=2&view=FitH" title="DHSA Magazine inside preview"></iframe>
+                            </div>
+                        </article>
+                        <article class="a4-sheet a4-sheet-front">
+                            <div class="a4-frame">
+                                <iframe src="magazine.pdf#page=1&view=FitH" title="DHSA Magazine cover preview"></iframe>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="magazine-copy">
+                        <p class="magazine-label">A4 Magazine Preview</p>
+                        <h3>A cleaner presentation for a publication-sized reading experience</h3>
+                        <p>
+                            The DHSA magazine brings together messages, event memories, student initiatives, and the association’s cultural identity in a full A4 portrait layout.
+                        </p>
+                        <div class="magazine-points">
+                            <span>22 pages</span>
+                            <span>A4 portrait layout</span>
+                            <span>Event highlights</span>
+                            <span>Community voices</span>
+                            <span>Designed publication</span>
+                        </div>
+                        <p class="magazine-note">Use the preview for a quick visual glance, then open the PDF in a full tab for comfortable reading at the correct scale.</p>
+                        <div class="section-actions magazine-actions">
+                            <a class="button button-primary" href="magazine.pdf" target="_blank" rel="noreferrer">Open Full Magazine</a>
+                            <a class="button button-secondary" href="magazine.pdf" download="DHSA-magazine.pdf">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="magazine-inline-note">
+                    The embedded preview is only for presentation. The full PDF opens in its natural viewer, where the A4 pages are much easier to read properly.
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section" id="register">
+            <div class="cta-card">
+                <div>
+                    <p class="section-kicker">Register</p>
+                    <h2>Stay connected with every update, event, and opportunity</h2>
+                    <p>We’re building a stronger student network. Join the DHSA WhatsApp community to receive announcements, support, and event updates directly.</p>
+                </div>
+                <a class="button button-primary" href="https://chat.whatsapp.com/Izy6qkaCigiL4ofra6x8TB?fbclid=PAZXh0bgNhZW0CMTEAAaZRgKftotMNH6ywAkg3F0jr5m62LGdamoCbwUee0FBLxQIJrZbGDVyPAfo_aem_Bg9y0JicA2pCn4uFkURWmQ" target="_blank" rel="noreferrer">Register Now</a>
+            </div>
+        </section>
+
+        <section class="section" id="tankri">
+            <div class="section-heading">
+                <p class="section-kicker">Tankri</p>
+                <h2>Explore Takri typing with DHSA’s custom keyboard tool</h2>
+                <p>Tankri script is a historical script traditionally used in the western Himalayan regions, especially in Himachal Pradesh, Jammu and Kashmir, and nearby hill areas. It evolved from the Sharada script between the 16th and 17th centuries and was widely used by local rulers for administrative records, revenue documents, trade accounts, and personal communication. Different regional forms of Tankri developed in various hill states, including Chamba and Kangra. During the 19th century, its use declined as Devanagari and Perso-Arabic scripts became more common. Today, Tankri is studied for its historical importance and represents an important part of Himalayan cultural heritage.</p>
+            </div>
+            <div class="tankri-card">
+                <div>
+                    <h3>What it offers</h3>
+                    <p>A QWERTY-based Takri keyboard, copy support, number and symbol layouts, and a cleaner practice flow for typing in the script.</p>
+                </div>
+                <a class="button button-secondary" href="tankri.html">Open Tankri Keyboard</a>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="section-heading">
+                <p class="section-kicker">Contact Us</p>
+                <h2>Meet the office bearers</h2>
+                <p>The full team is now represented here so every position holder has a dedicated place in the contact section.</p>
+            </div>
+            <div class="profile-grid">
+                <article class="profile-card">
+                    <img src="core panel/president.JPG" alt="DHSA President" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>President</h3>
+                        <a class="profile-name" href="https://www.instagram.com/arnavkbhatt/" target="_blank" rel="noreferrer">Arnav Kumar Bhatt</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/vp arushi.jpg" alt="DHSA Vice-President Arushi Dhiman" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Vice President</h3>
+                        <a class="profile-name" href="https://www.instagram.com/arushidhiman_/" target="_blank" rel="noreferrer">Arushi Dhiman</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/vp.jpg" alt="DHSA Vice-President Yukta Thakur" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Vice President</h3>
+                        <a class="profile-name" href="https://www.instagram.com/___yuktathakur___/" target="_blank" rel="noreferrer">Yukta Thakur</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/gensec raghavi.jpg" alt="DHSA General Secretary Raghavi Sharma" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>General Secretary</h3>
+                        <a class="profile-name" href="https://www.instagram.com/raghvi_0709/" target="_blank" rel="noreferrer">Raghavi Sharma</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/gensec saksham.jpg" alt="DHSA General Secretary Saksham Marwah" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>General Secretary</h3>
+                        <p class="profile-name">Saksham Marwah</p>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/jointsec payal.jpg" alt="DHSA Joint Secretary Payal Thakur" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Joint Secretary</h3>
+                        <a class="profile-name" href="https://www.instagram.com/paaylll_/" target="_blank" rel="noreferrer">Payal Thakur</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/jointsec sanchita.jpg" alt="DHSA Joint Secretary Sanchita Sharma" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Joint Secretary</h3>
+                        <a class="profile-name" href="https://www.instagram.com/sanchittaasharma/" target="_blank" rel="noreferrer">Sanchita Sharma</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/treasurer Himanshu.JPG" alt="DHSA Treasurer Himanshu Chauhan" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Treasurer</h3>
+                        <a class="profile-name" href="https://www.instagram.com/himanshuchauhan8981/" target="_blank" rel="noreferrer">Himanshu Chauhan</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/music head dikshit.jpg" alt="DHSA Music Head Dikshit Tanwar" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Music Head</h3>
+                        <a class="profile-name" href="https://www.instagram.com/the.kadhi_chowl/" target="_blank" rel="noreferrer">Dikshit Tanwar</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/culsec 2 sahil.jpg" alt="DHSA Cultural Secretary Sahil Rana" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Cultural Secretary</h3>
+                        <a class="profile-name" href="https://www.instagram.com/_sahilrana_33/" target="_blank" rel="noreferrer">Sahil Rana</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/culsec 3 ayushsingh.jpg" alt="DHSA Cultural Secretary Ayush Singh" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Cultural Secretary</h3>
+                        <a class="profile-name" href="https://www.instagram.com/yaitzayush/" target="_blank" rel="noreferrer">Ayush Singh</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/culsec 1 pragya.jpg" alt="DHSA Cultural Secretary Pragya Talwar" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Cultural Secretary</h3>
+                        <a class="profile-name" href="https://www.instagram.com/pr.agya_/" target="_blank" rel="noreferrer">Pragya Talwar</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/sm head vanshita.jpg" alt="DHSA Social Media Head Vanshita Choudhary" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Social Media Head</h3>
+                        <p class="profile-name">Vanshita Choudhary</p>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/sm head mannat.jpg" alt="DHSA Social Media Head Mannat Thakur" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Social Media Head</h3>
+                        <a class="profile-name" href="https://www.instagram.com/m4nnat.t/" target="_blank" rel="noreferrer">Mannat Thakur</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/contenthead khushi.JPG" alt="DHSA Content Head Khushi" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Content Head</h3>
+                        <p class="profile-name">Khushi</p>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/event head somya Pathania.jpg" alt="DHSA Event Head Somya Pathania" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Event Head</h3>
+                        <a class="profile-name" href="https://www.instagram.com/thesomyapathania/" target="_blank" rel="noreferrer">Somya Pathania</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/magazine head mitul.jpg" alt="DHSA Magazine Head Mitul" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Magazine Head</h3>
+                        <a class="profile-name" href="https://www.instagram.com/_mitulranaa/" target="_blank" rel="noreferrer">Mitul</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/north cc  kalpit.jpg" alt="DHSA North Campus Coordinator Kalpit" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>North Campus Coordinator</h3>
+                        <a class="profile-name" href="https://www.instagram.com/.k.a.l.p.i.t./" target="_blank" rel="noreferrer">Kalpit</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/north cc kajal.jpg" alt="DHSA North Campus Coordinator Kajal" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>North Campus Coordinator</h3>
+                        <a class="profile-name" href="https://www.instagram.com/_kajallllllllllllll/" target="_blank" rel="noreferrer">Kajal</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/south cc alisha.JPG" alt="DHSA South Campus Coordinator Alisha" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>South Campus Coordinator</h3>
+                        <a class="profile-name" href="https://www.instagram.com/alishaa_.06/" target="_blank" rel="noreferrer">Alisha</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/south cc swastik.jpg" alt="DHSA South Campus Coordinator Swastik" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>South Campus Coordinator</h3>
+                        <p class="profile-name">Swastik</p>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/sportssec suryansh.jpg" alt="DHSA Sports Secretary Suryansh" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Sports Secretary</h3>
+                        <a class="profile-name" href="https://www.instagram.com/_.suryansh_s/" target="_blank" rel="noreferrer">Suryansh</a>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="core panel/sportssec tanmay.jpg" alt="DHSA Sports Secretary Tanmay" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Sports Secretary</h3>
+                        <a class="profile-name" href="https://www.instagram.com/___tanmaysharmaa___/" target="_blank" rel="noreferrer">Tanmay</a>
+                    </div>
+                </article>
+                
+            </div>
+            <div class="social-row">
+                <a href="https://chat.whatsapp.com/Izy6qkaCigiL4ofra6x8TB?fbclid=PAZXh0bgNhZW0CMTEAAaZRgKftotMNH6ywAkg3F0jr5m62LGdamoCbwUee0FBLxQIJrZbGDVyPAfo_aem_Bg9y0JicA2pCn4uFkURWmQ" target="_blank" rel="noreferrer">WhatsApp</a>
+                <a href="https://www.linkedin.com/in/delhi-himachal-students-association-dhsa-2864a3353?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/delhi_himachal_association?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer">Instagram</a>
+                <a href="https://www.facebook.com/share/15BqE5TwpE/" target="_blank" rel="noreferrer">Facebook</a>
+            </div>
+        </section>
+
+        <section class="section" id="founding-team">
+            <div class="section-heading">
+                <p class="section-kicker">Founding Team</p>
+                <h2>The people who laid the foundation</h2>
+                <p>This section highlights the founder, co-founder, and founding councillors who helped shape the association in its early stage.</p>
+            </div>
+            <div class="profile-grid profile-grid-wide">
+                <article class="profile-card">
+                    <img src="founders/AC.jpg" alt="Founder Aadarsh Chauhan" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Founder</h3>
+                        <p class="profile-name">Aadarsh Chauhan</p>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="founders/BS.jpg" alt="Co-Founder Bhupender Singh" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Co-Founder</h3>
+                        <p class="profile-name">Bhupender Singh</p>
+                    </div>
+                </article>
+                <article class="profile-card">
+                     <img src="founders/AN.jpg" alt="Founding Councillor Arpit Negi" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Founding Councillor</h3>
+                        <p class="profile-name">Arpit Negi</p>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="founders/NK.jpg" alt="Founding Councillor Nikhil Kapoor" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Founding Councillor</h3>
+                        <p class="profile-name">Nikhil Kapoor</p>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <img src="founders/VK.jpg" alt="Founding Councillor Vaibhav Kanain" loading="lazy" decoding="async">
+                    <div class="profile-body">
+                        <h3>Founding Councillor</h3>
+                        <p class="profile-name">Vaibhav Kanain</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="advisory-committee">
+            <div class="section-heading">
+                <p class="section-kicker">Teacher Advisory Committee</p>
+                <h2>Academic and institutional guidance</h2>
+                <p>The advisory committee section gives dedicated space to mentors and faculty supporters connected with the association.</p>
+            </div>
+            <div class="profile-grid profile-grid-wide">
+                <article class="profile-card">
+                    <div class="profile-placeholder" aria-hidden="true">MX</div>
+                    <div class="profile-body">
+                        <h3>Committee Member</h3>
+                        <p class="profile-name">Mr X</p>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <div class="profile-placeholder" aria-hidden="true">MY</div>
+                    <div class="profile-body">
+                        <h3>Committee Member</h3>
+                        <p class="profile-name">Mr Y</p>
+                    </div>
+                </article>
+                <article class="profile-card">
+                    <div class="profile-placeholder" aria-hidden="true">MZ</div>
+                    <div class="profile-body">
+                        <h3>Committee Member</h3>
+                        <p class="profile-name">Mr Z</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="gallery">
+            <div class="section-heading">
+                <p class="section-kicker">Gallery</p>
+                <h2>Moments that define the community</h2>
+                <p>A visual snapshot of performances, gatherings, celebrations, and the energy students bring to DHSA.</p>
+            </div>
+            <div class="gallery-grid" id="gallery-grid">
+                <img src="images/1.JPG" alt="DHSA gallery moment 1" loading="lazy" decoding="async">
+                <img src="images/2.JPG" alt="DHSA gallery moment 2" loading="lazy" decoding="async">
+                <img src="images/8.jpg" alt="DHSA gallery moment 3" loading="lazy" decoding="async">
+                <img src="images/12.jpg" alt="DHSA gallery moment 4" loading="lazy" decoding="async">
+                <img class="gallery-extra" src="images/18.JPG" alt="DHSA gallery moment 5" loading="lazy" decoding="async" hidden>
+                <img class="gallery-extra" src="images/23.png" alt="DHSA gallery moment 6" loading="lazy" decoding="async" hidden>
+                <img class="gallery-extra" src="images/27.jpg" alt="DHSA gallery moment 7" loading="lazy" decoding="async" hidden>
+                <img class="gallery-extra" src="images/30.JPG" alt="DHSA gallery moment 8" loading="lazy" decoding="async" hidden>
+                <img class="gallery-extra" src="images/5.JPG" alt="DHSA gallery moment 9" loading="lazy" decoding="async" hidden>
+                <img class="gallery-extra" src="images/10.JPG" alt="DHSA gallery moment 10" loading="lazy" decoding="async" hidden>
+                <img class="gallery-extra" src="images/15.jpg" alt="DHSA gallery moment 11" loading="lazy" decoding="async" hidden>
+                <img class="gallery-extra" src="images/21.jpg" alt="DHSA gallery moment 12" loading="lazy" decoding="async" hidden>
+            </div>
+            <div class="gallery-actions">
+                <button class="button button-secondary gallery-toggle" id="gallery-toggle" type="button" aria-expanded="false">
+                    See More Photos
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Designed and developed by <a href="https://www.linkedin.com/in/arnav-kumar-7a6a58254/" target="_blank" rel="noreferrer">Arnav Bhatt</a></p>
     </footer>
+
+    <script>
+        const sections = document.querySelectorAll('main section[id]');
+        const navLinks = document.querySelectorAll('.site-nav a');
+        const navToggle = document.querySelector('.nav-toggle');
+        const siteNav = document.querySelector('.site-nav');
+        const eventLinks = document.querySelectorAll('.event-link');
+        const eventDate = document.getElementById('event-date');
+        const eventTitle = document.getElementById('event-title');
+        const eventSummary = document.getElementById('event-summary');
+        const eventVenue = document.getElementById('event-venue');
+        const eventTime = document.getElementById('event-time');
+        const eventDescription = document.getElementById('event-description');
+        const eventDetailCard = document.getElementById('event-detail-card');
+        const eventDetailClose = document.getElementById('event-detail-close');
+        const galleryToggle = document.getElementById('gallery-toggle');
+        const galleryExtras = document.querySelectorAll('.gallery-extra');
+        let eventAccordionInitialized = false;
+
+        if (navToggle && siteNav) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = siteNav.classList.toggle('is-open');
+                navToggle.setAttribute('aria-expanded', String(isOpen));
+            });
+
+            navLinks.forEach((link) => {
+                link.addEventListener('click', () => {
+                    siteNav.classList.remove('is-open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        const mobileEventView = window.matchMedia('(max-width: 640px)');
+
+        const populateEventDetail = (button) => {
+            eventDate.textContent = button.dataset.eventDate;
+            eventTitle.textContent = button.dataset.eventTitle;
+            eventSummary.textContent = button.dataset.eventSummary;
+            eventVenue.textContent = button.dataset.eventVenue;
+            eventTime.textContent = button.dataset.eventTime;
+            eventDescription.textContent = button.dataset.eventDescription;
+        };
+
+        const closeEventDetail = () => {
+            if (!eventDetailCard) {
+                return;
+            }
+
+            eventDetailCard.classList.remove('is-open');
+            eventLinks.forEach((item) => {
+                item.classList.remove('is-active');
+                item.setAttribute('aria-selected', 'false');
+                item.setAttribute('aria-expanded', 'false');
+            });
+        };
+
+        const syncEventDetailMode = () => {
+            if (!eventDetailCard) {
+                return;
+            }
+
+            if (mobileEventView.matches) {
+                if (!eventAccordionInitialized) {
+                    closeEventDetail();
+                    eventAccordionInitialized = true;
+                    return;
+                }
+                const activeButton = document.querySelector('.event-link.is-active');
+                eventDetailCard.classList.toggle('is-open', Boolean(activeButton));
+            } else {
+                if (!document.querySelector('.event-link.is-active') && eventLinks[0]) {
+                    eventLinks[0].classList.add('is-active');
+                    eventLinks[0].setAttribute('aria-selected', 'true');
+                    eventLinks[0].setAttribute('aria-expanded', 'true');
+                    populateEventDetail(eventLinks[0]);
+                }
+                eventDetailCard.classList.add('is-open');
+            }
+        };
+
+        if (eventLinks.length) {
+            eventLinks.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const isAlreadyActive = button.classList.contains('is-active');
+
+                    if (mobileEventView.matches && isAlreadyActive) {
+                        closeEventDetail();
+                        return;
+                    }
+
+                    eventLinks.forEach((item) => {
+                        item.classList.remove('is-active');
+                        item.setAttribute('aria-selected', 'false');
+                        item.setAttribute('aria-expanded', 'false');
+                    });
+
+                    button.classList.add('is-active');
+                    button.setAttribute('aria-selected', 'true');
+                    button.setAttribute('aria-expanded', 'true');
+                    populateEventDetail(button);
+                    syncEventDetailMode();
+                });
+            });
+        }
+
+        if (eventDetailClose) {
+            eventDetailClose.addEventListener('click', closeEventDetail);
+        }
+
+        syncEventDetailMode();
+        mobileEventView.addEventListener('change', syncEventDetailMode);
+
+        if (galleryToggle && galleryExtras.length) {
+            galleryToggle.addEventListener('click', () => {
+                const isExpanded = galleryToggle.getAttribute('aria-expanded') === 'true';
+
+                galleryExtras.forEach((image) => {
+                    if (isExpanded) {
+                        image.setAttribute('hidden', '');
+                    } else {
+                        image.removeAttribute('hidden');
+                    }
+                });
+
+                galleryToggle.setAttribute('aria-expanded', String(!isExpanded));
+                galleryToggle.textContent = isExpanded ? 'See More Photos' : 'See Less Photos';
+            });
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                navLinks.forEach((link) => {
+                    const isActive = link.getAttribute('href') === `#${entry.target.id}`;
+                    link.classList.toggle('active', isActive);
+                });
+            });
+        }, {
+            rootMargin: '-40% 0px -45% 0px',
+            threshold: 0.05
+        });
+
+        sections.forEach((section) => observer.observe(section));
+    </script>
 </body>
 </html>

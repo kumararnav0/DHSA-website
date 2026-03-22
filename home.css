@@ -4,12 +4,15 @@
     --bg: #f6f0e8;
     --surface: rgba(255, 250, 244, 0.8);
     --surface-strong: rgba(255, 247, 236, 0.94);
+    --surface-soft: rgba(255, 252, 248, 0.92);
     --text: #20160f;
     --muted: #6c5645;
     --accent: #bb5b14;
     --accent-dark: #7c3303;
     --line: rgba(89, 50, 24, 0.12);
+    --line-strong: rgba(89, 50, 24, 0.18);
     --shadow: 0 20px 50px rgba(46, 23, 7, 0.12);
+    --shadow-soft: 0 16px 34px rgba(46, 23, 7, 0.08);
     --radius: 28px;
 }
 
@@ -26,6 +29,8 @@ body {
     font-family: "Manrope", sans-serif;
     color: var(--text);
     background:
+        radial-gradient(circle at 12% 18%, rgba(255, 205, 141, 0.22), transparent 24%),
+        radial-gradient(circle at 88% 32%, rgba(187, 91, 20, 0.09), transparent 28%),
         radial-gradient(circle at top, rgba(255, 185, 115, 0.22), transparent 30%),
         linear-gradient(180deg, rgba(248, 240, 231, 0.95), rgba(244, 236, 226, 0.98)),
         url('background/bg1.webp') center top / cover fixed no-repeat;
@@ -71,6 +76,8 @@ a {
     border: 3px solid rgba(255, 255, 255, 0.92);
     box-shadow: 0 14px 32px rgba(53, 22, 4, 0.16);
     flex-shrink: 0;
+    animation: logoIntro 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    transform-origin: center;
 }
 
 .brand-kicker,
@@ -160,12 +167,13 @@ a {
 main {
     width: min(1380px, calc(100% - 24px));
     margin: 0 auto;
-    padding-bottom: 56px;
+    padding-bottom: 72px;
 }
 
 .section {
     scroll-margin-top: 120px;
-    padding: 56px 0 0;
+    position: relative;
+    padding: 74px 0 0;
 }
 
 .hero {
@@ -185,7 +193,8 @@ main {
 .profile-card {
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: var(--surface);
+    background:
+        linear-gradient(180deg, rgba(255, 252, 248, 0.94), rgba(248, 239, 229, 0.8));
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow);
 }
@@ -291,6 +300,14 @@ main {
     border-radius: 20px;
     background: var(--surface-strong);
     border: 1px solid rgba(187, 91, 20, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(187, 91, 20, 0.14);
+    box-shadow: 0 16px 30px rgba(46, 23, 7, 0.08);
 }
 
 .stat-value {
@@ -308,7 +325,7 @@ main {
 
 .section-heading {
     max-width: 780px;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
 }
 
 .section-heading h2 {
@@ -327,6 +344,29 @@ main {
 
 .feature-card {
     padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.feature-card::before,
+.tankri-card::before,
+.cta-card::before,
+.profile-card::before,
+.event-detail-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.7), transparent);
+    pointer-events: none;
+}
+
+.feature-card:hover,
+.profile-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-strong);
+    box-shadow: 0 24px 44px rgba(46, 23, 7, 0.12);
 }
 
 .feature-card h3,
@@ -347,7 +387,8 @@ main {
 .event-detail-card {
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: var(--surface);
+    background:
+        linear-gradient(180deg, rgba(255, 252, 248, 0.95), rgba(246, 237, 226, 0.84));
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow);
 }
@@ -496,6 +537,13 @@ main {
     display: block;
     border-radius: 22px;
     box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 24px 40px rgba(46, 23, 7, 0.14);
+    filter: saturate(1.04);
 }
 
 .gallery-extra[hidden] {
@@ -587,7 +635,7 @@ main {
 
 .magazine-copy {
     padding: clamp(20px, 4vw, 34px);
-    background: rgba(255, 252, 247, 0.8);
+    background: rgba(255, 252, 247, 0.88);
     border: 1px solid rgba(89, 50, 24, 0.08);
 }
 
@@ -652,6 +700,8 @@ main {
 
 .cta-card,
 .tankri-card {
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -766,6 +816,44 @@ main {
 
 .site-footer a {
     color: var(--accent-dark);
+}
+
+@keyframes logoIntro {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.9);
+        box-shadow: 0 6px 14px rgba(53, 22, 4, 0.08);
+    }
+
+    65% {
+        opacity: 1;
+        transform: translateY(0) scale(1.04);
+        box-shadow: 0 20px 38px rgba(53, 22, 4, 0.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        box-shadow: 0 14px 32px rgba(53, 22, 4, 0.16);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .brand-logo,
+    .feature-card,
+    .profile-card,
+    .stat-card,
+    .gallery-grid img,
+    .button,
+    .event-link,
+    .site-nav a {
+        animation: none !important;
+        transition: none !important;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -1065,7 +1153,7 @@ main {
     }
 
     .section {
-        padding-top: 18px;
+        padding-top: 28px;
     }
 
     .section-heading {
@@ -1142,16 +1230,43 @@ main {
     }
 
     .event-links {
-        padding: 12px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 5px;
+        padding: 6px;
     }
 
     .event-link {
-        flex-basis: 100%;
-        min-width: 100%;
-        text-align: center;
+        min-width: 0;
+        min-height: 48px;
+        padding: 7px 6px 6px;
+        border-radius: 12px;
+        font-size: clamp(0.64rem, 2.25vw, 0.76rem);
+        line-height: 1;
+        text-align: left;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .event-link::after {
+        left: 6px;
+        bottom: 5px;
+        width: 10px;
+        height: 1px;
+    }
+
+    .event-link:hover::after,
+    .event-link.is-active::after {
+        width: 16px;
+    }
+
+    .event-link.is-active {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 20px rgba(46, 23, 7, 0.1);
     }
 
     .event-detail-card {
+        margin-top: 12px;
         padding: 16px;
         border-radius: 22px;
     }

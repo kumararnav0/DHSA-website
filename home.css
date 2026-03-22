@@ -1239,25 +1239,28 @@ main {
     .event-link {
         min-width: 0;
         min-height: 48px;
-        padding: 7px 6px 6px;
+        padding: 8px 6px 7px;
         border-radius: 12px;
-        font-size: clamp(0.64rem, 2.25vw, 0.76rem);
-        line-height: 1;
-        text-align: left;
+        font-size: clamp(0.74rem, 2.55vw, 0.88rem);
+        line-height: 1.08;
+        text-align: center;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
+        justify-content: center;
+        text-wrap: balance;
     }
 
     .event-link::after {
-        left: 6px;
+        left: 50%;
         bottom: 5px;
-        width: 10px;
+        width: 12px;
         height: 1px;
+        transform: translateX(-50%);
     }
 
     .event-link:hover::after,
     .event-link.is-active::after {
-        width: 16px;
+        width: 20px;
     }
 
     .event-link.is-active {

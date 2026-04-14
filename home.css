@@ -661,37 +661,9 @@ main {
     line-height: 1.8;
 }
 
-.magazine-points {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 22px 0 18px;
-}
-
-.magazine-points span {
-    padding: 10px 14px;
-    border-radius: 999px;
-    background: rgba(187, 91, 20, 0.1);
-    color: var(--accent-dark);
-    font-size: 0.92rem;
-    font-weight: 700;
-}
-
-.magazine-note {
-    margin-top: 4px;
-}
-
 .magazine-actions {
     justify-content: flex-start;
     margin-top: 24px;
-}
-
-.magazine-inline-note {
-    max-width: 900px;
-    margin: 16px auto 0;
-    text-align: center;
-    color: var(--muted);
-    line-height: 1.7;
 }
 
 .cta-section {
@@ -1128,8 +1100,7 @@ main {
     .feature-card p,
     .tankri-card p,
     .profile-body a,
-    .magazine-copy p,
-    .magazine-inline-note {
+    .magazine-copy p {
         font-size: 0.94rem;
         line-height: 1.7;
     }
@@ -1197,18 +1168,6 @@ main {
     .magazine-copy h3 {
         font-size: 1.85rem;
         line-height: 1;
-    }
-
-    .magazine-points {
-        gap: 8px;
-        margin: 16px 0 14px;
-    }
-
-    .magazine-points span {
-        width: 100%;
-        text-align: center;
-        padding: 9px 12px;
-        font-size: 0.86rem;
     }
 
     .magazine-actions {
@@ -1306,14 +1265,12 @@ main {
     }
 
     #contact,
-    #founding-team,
-    #advisory-committee {
+    #founding-team {
         padding-inline: 4px;
     }
 
     #contact .section-heading,
     #founding-team .section-heading,
-    #advisory-committee .section-heading,
     #contact .social-row {
         padding-inline: 2px;
     }
